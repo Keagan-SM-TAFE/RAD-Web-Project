@@ -5,9 +5,10 @@
  *
  * PHP version 8
  *
- * @category  WebProgramming
+ * @category  Rapid Application Development
  * @package   PEAR
- * @author    Keagan Young <30017653@tafe.wa.edu.au>
+ * @author    Keagan Young
+ * @author    Andrew
  * @copyright 1997-2021 The PHP Group
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
@@ -25,8 +26,8 @@ echo    '<!-- Set character encoding for the document -->
     <title>Blockbuster</title>
     <meta name="description" content="Movie Database Web Project">
     <meta name="author" content="Keagan Young">
-    <meta name="keywords" content="web programming, 
-    project">
+    <meta name="author" content="Andrew">
+    <meta name="keywords" content="Rapid Application Development Project">
     <link rel="icon" type="image/png" sizes="16x16" 
     href="images/favicon/favicon-16x16.png">
     <meta name="theme-color" content="#333">

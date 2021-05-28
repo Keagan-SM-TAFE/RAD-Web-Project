@@ -21,15 +21,16 @@
         <?php
 /**
  * Short description for file
- * Web Programming Project
+ * Rapid Application Development Project
  * Movie Database with MySQL connection
  * This PHP code creates a graph using PHPGD
  *
  * PHP version 8
  *
- * @category  WebProgramming
+ * @category  Rapid Application Development
  * @package   PEAR
- * @author    Keagan Young <30017653@tafe.wa.edu.au>
+ * @author    Keagan Young
+ * @author    Andrew
  * @copyright 1997-2021 The PHP Group
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
