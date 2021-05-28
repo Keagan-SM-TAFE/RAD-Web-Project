@@ -31,5 +31,5 @@ echo    '<!-- Set character encoding for the document -->
     <link rel="icon" type="image/png" sizes="16x16" 
     href="images/favicon/favicon-16x16.png">
     <meta name="theme-color" content="#333">
-    <link rel="stylesheet" type="text/css" href="styleSheet/styles.css">';
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">';
 ?>

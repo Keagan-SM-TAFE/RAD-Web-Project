@@ -2,23 +2,22 @@
 <html>
 <head>
 <!-- All the important stuff for the <head> -->
-    <?php require_once 'includes_php/head.php'; ?>
+<?php require_once 'includes_php/head.php'; ?>
 </head>
 <body>
 <!-- All the important stuff for the navbar -->
-    <?php require_once 'includes_php/navBar.php'; ?>
-    <section id="showcase">
-        <div class="container">
-            <h1>Web Programming</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum consectetur sed reprehenderit commodi tenetur cumque 
-                rem consequuntur ipsa sapiente? Rem, accusamus nihil harum veniam dicta consequatur ex maiores aperiam sed!</p>
-        </div>
-    </section>
+<?php require_once 'includes_php/navBar.php'; ?>
+
+    <div class="jumbotron text-center">
+        <h1>Rapid Application Development</h1>
+        <h2>Movie Database Search</h2>
+    </div>
 
 <!-- Start of the main content -->
-    <section id="main-content">
-        <div class="container">
-        <?php
+    <section class="container-fluid">
+    
+
+<?php
 /**
  * Short description for file
  * Rapid Application Development Project
@@ -163,7 +162,7 @@ foreach ($gridData as $key => $value) {
 */
 imagepng($imageChart, "Chart.png");
 imagedestroy($imageChart);
-echo "<img src='Chart.png'>";
+echo "<img src='Chart.png' class='rounded' alt='Top Ten Search Results'>";
 ?>
         </div>
     </section>

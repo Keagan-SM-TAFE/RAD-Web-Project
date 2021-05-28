@@ -7,17 +7,16 @@
 <body>
 <!-- All the important stuff for the navbar -->
 <?php require_once 'includes_php/navBar.php'; ?>
-    <section id="showcase">
-        <div class="container">
-            <h1>Web Programming</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum consectetur sed reprehenderit commodi tenetur cumque rem 
-                consequuntur ipsa sapiente? Rem, accusamus nihil harum veniam dicta consequatur ex maiores aperiam sed!</p>
-        </div>
-    </section>
+
+    <div class="jumbotron text-center">
+        <h1>Rapid Application Development</h1>
+        <h2>Movie Database Search</h2>
+    </div>
 
 <!-- Start of the main content -->
-    <section id="main-content">
-        <div class="container">       
+    <section class="container-fluid">
+     
+
 <?php
 /**
  * Short description for file
@@ -44,34 +43,39 @@ $verifiedTitle = $verifiedGenre = $verifiedRating = $verifiedYear = null;
 $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%' ";
 ?>
             <!-- Creation of the search form -->
-            <h2>Movie Database Search</h2>
-            <div class="search-form">
-                <p><span class="error"></span></p>
+
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                    Title: <input type="text" name="title" placeholder="Search.." value="<?php echo $title; ?>">
-                    <span class="error"><?php echo $titleError; ?></span>
-                    <br><br>
-                    Genre: <input type="text" name="genre" placeholder="Search.." value="<?php echo $genre; ?>">
-                    <span class="error"><?php echo $genreError; ?></span>
-                    <br><br>
-                    Rating: <input type="text" name="rating" placeholder="Search.." value="<?php echo $rating; ?>">
-                    <span class="error"><?php echo $ratingError; ?></span>
-                    <br><br>
-                    Year: <input type="text" name="year" placeholder="Search.." value="<?php echo $year; ?>">
-                    <span class="error"><?php echo $yearError; ?></span>
-                    <br><br>
-                    <input type="submit" name="submit" value="Search">
-                </form><br>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control-lg" id="title" placeholder="Enter Title" value="<?php echo $title; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text" class="form-control-lg" id="genre" placeholder="Enter Genre" value="<?php echo $genre; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <input type="text" class="form-control-lg" id="rating" placeholder="Enter Rating" value="<?php echo $rating; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="text" class="form-control-lg" id="year" placeholder="Enter Year" value="<?php echo $year; ?>">
+                    </div>
+                    <button type="submit" id="submit" class="btn btn-primary">Search</button>
+                </form>
             </div>
 <?php 
 require_once 'includes_php/sanitiseUserInput.php';
 if(count($_POST)>0) {
+    echo    '<div class="alert alert-success">
+                <strong>Success!</strong> Form Submitted!
+            </div>';
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $result = $stmt->get_result();                            
     if (isset($result->num_rows) && $result->num_rows > 0) {   
         //Creation and headings Of the Table
-        echo    "<table>
+        echo    '<tableclass="table table-dark table-striped">
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
@@ -85,7 +89,7 @@ if(count($_POST)>0) {
                         <th>Genre</th>
                         <th>Aspect</th>
                         <th>searchNum</th>
-                    </tr>";
+                    </tr>';
         //Update searchNum value from search results
         $updateQuery = "UPDATE movieDatabase_movies SET searchNum=(searchNum + 1) WHERE Title like '%$verifiedTitle%' ";
         $stmt = $conn->prepare($updateQuery);

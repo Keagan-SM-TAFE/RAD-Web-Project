@@ -14,20 +14,29 @@
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
  */
-echo    '<header>
-<div class="container">
-    <div id="branding">
-        <h1><span class="highlight">Rapid Application Development</span> Project</h1>
-    </div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="chart.php">Top 10 Searches</a></li>
-            <li><a href="#news">#News</a></li>
-            <li><a href="#contact">#Contact</a></li>
-            <li><a href="#about">#About</a></li>
-        </ul>
-    </nav>
-</div>
-</header>';
+echo    '<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">RAD Project</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chart.php">Top 10 Searches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">#Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">#News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">#About</a>
+                    </li>
+                </ul>
+            </div>  
+        </nav>';
 ?>
