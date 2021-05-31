@@ -2,14 +2,14 @@
 <html>
 <head>
 <!-- All the important stuff for the <head> -->
-<?php require_once 'includes_php/head.php'; ?>
+<?php require_once "includes_php\\head.php"; ?>
 </head>
 <body>
 <!-- All the important stuff for the navbar -->
-<?php require_once 'includes_php/navBar.php'; ?>
+<?php require_once "includes_php\\navBar.php"; ?>
 
 <!-- All the important stuff for the Jummbotron/Showcase -->
-<?php require_once 'includes_php/jumbotron.php'; ?>
+<?php require_once "includes_php\\jumbotron.php"; ?>
 
 <!-- Start of the main content -->
 <section class="container-fluid">
@@ -21,15 +21,15 @@
  *
  * PHP version 8
  *
- * @category  Rapid Application Development
+ * @category  Rapid_Application_Development
  * @package   PEAR
- * @author    Keagan Young
- * @author    Andrew
+ * @author    Keagan Young <keaganyoun554@gmail.com>
+ * @author    Andrew Tuitupou <Atuitupou2@gmail.com>
  * @copyright 1997-2021 The PHP Group
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
  */
-require_once 'includes_php/db_connection.php';
+require_once "includes_php\\db_connection.php";
 $conn = openConn();
 //define variables and set to null values
 $title = $genre = $rating = $year = null;
@@ -62,21 +62,23 @@ $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%'
                     <br><br>
                 </form>
             </div>
-<?php 
-require_once 'includes_php/sanitiseUserInput.php';
-if(count($_POST)>0) {
-    echo    '<div class="alert alert-success">
+<?php
+require_once "includes_php\\sanitiseUserInput.php";
+if (count($_POST)>0) {
+    echo    '
+            <div class="alert alert-success">
                 <strong>Success!</strong> Form Submitted!
-            </div>';
+            </div>
+            ';
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $result = $stmt->get_result();                            
     if (isset($result->num_rows) && $result->num_rows > 0) {   
         //Creation and headings Of the Table
-        echo    "
-                <div class='container'>
-                <div class='table-responsive'>
-                <table class='table table-hover table-condensed'>
+        echo    '
+                <div class="container">
+                <div class="table-responsive">
+                <table class="table table-hover table-condensed">
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
@@ -91,13 +93,14 @@ if(count($_POST)>0) {
                         <th>Aspect</th>
                         <th>searchNum</th>
                     </tr>
-                ";
+                ';
         //Update searchNum value from search results
-        $updateQuery = "UPDATE movieDatabase_movies SET searchNum=(searchNum + 1) WHERE Title like '%$verifiedTitle%' ";
+        $updateQuery = "UPDATE movieDatabase_movies SET searchNum=(searchNum + 1) 
+        WHERE Title like '%$verifiedTitle%' ";
         $stmt = $conn->prepare($updateQuery);
         $stmt->execute();
         // output the data of each row
-        while($row = $result->fetch_assoc()) {            
+        while ($row = $result->fetch_assoc()) {            
             echo    "
                     <tr>
                         <td>" . $row["ID"] . "</td>
@@ -126,9 +129,7 @@ if(count($_POST)>0) {
         </div>
     </section>
 <?php closeConn($conn); ?>
-    <footer>
-        <!-- All the important stuff for the <footer> -->
-<?php require_once 'includes_php\footer.php'; ?>
-    </footer>
+<!-- All the important stuff for the <footer> -->
+<?php require_once "includes_php\\footer.php"; ?>
 </body>
 </html>

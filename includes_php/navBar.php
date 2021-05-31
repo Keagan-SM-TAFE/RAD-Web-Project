@@ -5,10 +5,10 @@
  *
  * PHP version 8
  *
- * @category  Rapid Application Development
+ * @category  Rapid_Application_Development
  * @package   PEAR
- * @author    Keagan Young
- * @author    Andrew
+ * @author    Keagan Young <keaganyoun554@gmail.com>
+ * @author    Andrew Tuitupou <Atuitupou2@gmail.com>
  * @copyright 1997-2021 The PHP Group
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
@@ -17,8 +17,10 @@ echo    '
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">RAD Project</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsableNavBar" 
-            aria-controls="collapsableNavBar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#collapsableNavBar" 
+            aria-controls="collapsableNavBar" aria-expanded="false" 
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsableNavBar">
