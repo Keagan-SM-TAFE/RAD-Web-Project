@@ -13,23 +13,24 @@
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
  */
-echo    '<!-- Set character encoding for the document -->
+echo    '
+<!-- Set character encoding for the document -->
 <meta charset="utf-8">
-    <!-- Viewport for responsive web design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, 
-    viewport-fit=cover">
-        <!--
-        The above 2 meta tags *must* come first in the <head>
-        to consistently ensure proper document rendering.
-        Any other head element should come *after* these tags.
-        -->
-    <title>Blockbuster</title>
-    <meta name="description" content="Movie Database Web Project">
-    <meta name="author" content="Keagan Young">
-    <meta name="author" content="Andrew">
-    <meta name="keywords" content="Rapid Application Development Project">
-    <link rel="icon" type="image/png" sizes="16x16" 
-    href="images/favicon/favicon-16x16.png">
-    <meta name="theme-color" content="#333">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">';
+<!-- Viewport for responsive web design -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    The above 2 meta tags *must* come first in the <head>
+    to consistently ensure proper document rendering.
+    Any other head element should come *after* these tags.
+    -->
+<title>RAD Project</title>
+<meta name="description" content="Movie Database RAD Project">
+<meta name="author" content="Keagan Young">
+<meta name="author" content="Andrew">
+<meta name="keywords" content="Rapid Application Development Project">
+<link rel="icon" type="image/png" sizes="16x16" 
+href="images/favicon/favicon-16x16.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+';
 ?>

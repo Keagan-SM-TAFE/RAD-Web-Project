@@ -8,15 +8,11 @@
 <!-- All the important stuff for the navbar -->
 <?php require_once 'includes_php/navBar.php'; ?>
 
-    <div class="jumbotron text-center">
-        <h1>Rapid Application Development</h1>
-        <h2>Movie Database Search</h2>
-    </div>
+<!-- All the important stuff for the Jummbotron/Showcase -->
+<?php require_once 'includes_php/jumbotron.php'; ?>
 
 <!-- Start of the main content -->
-    <section class="container-fluid">
-     
-
+<section class="container-fluid">
 <?php
 /**
  * Short description for file
@@ -43,25 +39,27 @@ $verifiedTitle = $verifiedGenre = $verifiedRating = $verifiedYear = null;
 $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%' ";
 ?>
             <!-- Creation of the search form -->
-
+            <div class="container">
+                <h2>Movie Database Search Form</h2>
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control-lg" id="title" placeholder="Enter Title" value="<?php echo $title; ?>">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title:</label>
+                        <input type="text" class="form-control form-control-lg" id="title" placeholder="Enter Title"  name="title" value="<?php echo $title; ?>">
                     </div>
-                    <div class="form-group">
-                        <label for="genre">Genre</label>
-                        <input type="text" class="form-control-lg" id="genre" placeholder="Enter Genre" value="<?php echo $genre; ?>">
+                    <div class="mb-3">
+                        <label for="genre" class="form-label">Genre</label>
+                        <input type="text" class="form-control form-control-lg" id="genre" placeholder="Enter Genre"  name="genre" value="<?php echo $genre; ?>">
                     </div>
-                    <div class="form-group">
-                        <label for="rating">Rating</label>
-                        <input type="text" class="form-control-lg" id="rating" placeholder="Enter Rating" value="<?php echo $rating; ?>">
+                    <div class="mb-3">
+                        <label for="rating" class="form-label">Rating</label>
+                        <input type="text" class="form-control form-control-lg" id="rating" placeholder="Enter Rating"  name="rating" value="<?php echo $rating; ?>">
                     </div>
-                    <div class="form-group">
-                        <label for="year">Year</label>
-                        <input type="text" class="form-control-lg" id="year" placeholder="Enter Year" value="<?php echo $year; ?>">
+                    <div class="mb-3">
+                        <label for="year" class="form-label">Year</label>
+                        <input type="text" class="form-control form-control-lg" id="year" placeholder="Enter Year"  name="year" value="<?php echo $year; ?>">
                     </div>
-                    <button type="submit" id="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-outline-success btn-lg">Search</button>
+                    <br><br>
                 </form>
             </div>
 <?php 
@@ -75,7 +73,10 @@ if(count($_POST)>0) {
     $result = $stmt->get_result();                            
     if (isset($result->num_rows) && $result->num_rows > 0) {   
         //Creation and headings Of the Table
-        echo    '<tableclass="table table-dark table-striped">
+        echo    "
+                <div class='container'>
+                <div class='table-responsive'>
+                <table class='table table-hover table-condensed'>
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
@@ -89,14 +90,16 @@ if(count($_POST)>0) {
                         <th>Genre</th>
                         <th>Aspect</th>
                         <th>searchNum</th>
-                    </tr>';
+                    </tr>
+                ";
         //Update searchNum value from search results
         $updateQuery = "UPDATE movieDatabase_movies SET searchNum=(searchNum + 1) WHERE Title like '%$verifiedTitle%' ";
         $stmt = $conn->prepare($updateQuery);
         $stmt->execute();
         // output the data of each row
         while($row = $result->fetch_assoc()) {            
-            echo    "<tr>
+            echo    "
+                    <tr>
                         <td>" . $row["ID"] . "</td>
                         <td>" . $row["Title"] . "</td>
                         <td>" . $row["Studio"] . "</td>
@@ -109,9 +112,14 @@ if(count($_POST)>0) {
                         <td>" . $row["Genre"] . "</td>
                         <td>" . $row["Aspect"] . "</td>
                         <td>" . $row["searchNum"] . "</td>
-                    </tr>";
+                    </tr>
+                    ";
         }
-        echo "</table>";
+        echo    "
+                </table>
+                </div>
+                </div>
+                ";
     }
 }
 ?>
