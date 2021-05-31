@@ -4,4 +4,4 @@ A website written in PHP that searches a list of movies on an SQL database and r
 
 ## Responsive Design
 
-Using BootStrap to implement a responsive design to the website.
+Using BootStrap 5 delivered by a CDN to provide and implement a responsive design to the website.
