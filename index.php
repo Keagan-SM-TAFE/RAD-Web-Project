@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <!-- All the important stuff for the <head> -->
 <?php require_once "includes_php\\head.php"; ?>
