@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- All the important stuff for the <head> tag -->
+<!-- All the important stuff for the <head> -->
 <?php require_once "includes_php\\head.php"; ?>
 </head>
 <body>
@@ -29,13 +29,12 @@
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
  */
-require_once "includes_php\\db_connection.php";
+require_once "includes_php\\Database_Config\\db_connection.php";
 $conn = openConn();
 //define variables and set to null values
 $title = $genre = $rating = $year = null;
 $titleError = $genreError = $ratingError = $yearError = null;
 $verifiedTitle = $verifiedGenre = $verifiedRating = $verifiedYear = null;
-$newsletterEmail = null;
 
 //Default Query Statemet
 $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%' ";
@@ -130,35 +129,34 @@ if (count($_POST)>0) {
 ?>
         </div>
     </section>
-<?php closeConn($conn); 
-?>
-<!-- Footer -->
-<footer class="bg-light text-center">
-    <div class="container p-4 pb-0">
-        <section class="">
-        <form action="">
-            <div class="row d-flex justify-content-center">
-            <div class="col-auto">
-                <p class="pt-2">
-                    <strong>Subscribe to our newsletter</strong>
-                </p>
-            </div>
-            <div class="col-md-5 col-12">
-                <div class="form-outline mb-4">
-                    <input type="email" class="form-control form-control-lg" id="newsletterEmail"
-                    placeholder="Enter Email" name="newsletterEmail" value="<?php echo $newsletterEmail; ?>">
+<?php closeConn($conn); ?>
+<!-- All the important stuff for the <footer> -->
+    <footer class="bg-light text-center">
+        <div class="container p-4 pb-0">
+            <section class="">
+            <form action="">
+                <div class="row d-flex justify-content-center">
+                <div class="col-auto">
+                    <p class="pt-2">
+                        <strong>Subscribe to our newsletter</strong>
+                    </p>
                 </div>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-4">Subscribe</button>
-            </div>
-            </div>
-        </form>
-        </section>
-    </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        Copyright &copy; 2021-<?php echo date("Y");?> RAD Group Project
-    </div>
-</footer>
+                <div class="col-md-5 col-12">
+                    <div class="form-outline mb-4">
+                        <input type="email" class="form-control form-control-lg" id="newsletterEmail"
+                        placeholder="Enter Email" name="newsletterEmail" value="<?php echo $newsletterEmail; ?>">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-4">Subscribe</button>
+                </div>
+                </div>
+            </form>
+            </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+<?php require_once "includes_php\\GenericFooter.php"; ?>
+        </div>
+    </footer>
 </body>
 </html>
