@@ -2,7 +2,7 @@
 <footer class="bg-light text-center">
         <div class="container p-4 pb-0">
             <section class="">
-            <form action="">
+            <form action="includes_php\phpActions\subscribe.php">
                 <div class="row d-flex justify-content-center">
                 <div class="col-auto">
                     <p class="pt-2">
@@ -10,9 +10,19 @@
                     </p>
                 </div>
                 <div class="col-md-5 col-12">
-                    <div class="form-outline mb-4">
-                        <input type="email" class="form-control form-control-lg" id="newsletterEmail"
-                        placeholder="Enter Email" name="newsletterEmail" value="<?php echo $newsletterEmail; ?>">
+                    <div class="row g-3">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInputGrid">
+                                <label for="floatingInputGrid">Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInputGrid">
+                                <label for="floatingInputGrid">Email address</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-auto">

@@ -45,7 +45,7 @@
         <?php require_once "includes_php\\phpActions\\inputAdmin.php"; ?>
  	</div>
 </section>
-<br><br>
+<br><br><br><br><br><br><br><br><br><br>
 <!-- START Footer -->
 <?php require_once "includes_php\\templates\\genericFooter.php";?>
 <!-- END Footer -->

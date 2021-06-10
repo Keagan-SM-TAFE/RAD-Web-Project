@@ -171,6 +171,7 @@ echo '
 ?>
         </div>
     </section>
+    <br><br><br><br><br>
 <?php closeConn($conn); ?>
 <!-- START Footer -->
 <?php require_once "includes_php\\templates\\subscribtionFooter.php"; ?>
