@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- All the important stuff for the <head> -->
-<?php require_once "includes_php\\head.php"; ?>
-</head>
-<body>
-<!-- All the important stuff for the navbar -->
-<?php require_once "includes_php\\navBar.php"; ?>
-
-<!-- All the important stuff for the Jummbotron/Showcase -->
-<?php require_once "includes_php\\jumbotron.php"; ?>
-
-<!-- Start of the main content -->
+<!-- START Head -->
+<?php require_once "includes_php\\templates\\head.php"; ?>
+<!-- END Head -->
+<!-- START Body -->
+<?php require_once "includes_php\\templates\\navBar.php"; ?>
+<!-- START Showcase -->
+<?php require_once "includes_php\\templates\\showcase.php"; ?>
+<!-- END Showcase -->
+<!-- START of Main Website Content -->
 <section class="container-fluid">
+
+
 <?php
 /**
  * Short description for file
@@ -29,7 +26,8 @@
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
  */
-require_once "includes_php\\Database_Config\\db_connection.php";
+// include database connection
+require_once "includes_php\\databaseConnection\\databaseConnection.php";
 $conn = openConn();
 //define variables and set to null values
 $title = $genre = $rating = $year = null;
@@ -64,7 +62,7 @@ $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%'
                 </form>
             </div>
 <?php
-require_once "includes_php\\sanitiseUserInput.php";
+require_once "includes_php\\phpActions\\sanitiseUserInput.php";
 if (count($_POST)>0) {
     echo    '
             <div class="alert alert-success">
@@ -130,33 +128,8 @@ if (count($_POST)>0) {
         </div>
     </section>
 <?php closeConn($conn); ?>
-<!-- All the important stuff for the <footer> -->
-    <footer class="bg-light text-center">
-        <div class="container p-4 pb-0">
-            <section class="">
-            <form action="">
-                <div class="row d-flex justify-content-center">
-                <div class="col-auto">
-                    <p class="pt-2">
-                        <strong>Subscribe to our newsletter</strong>
-                    </p>
-                </div>
-                <div class="col-md-5 col-12">
-                    <div class="form-outline mb-4">
-                        <input type="email" class="form-control form-control-lg" id="newsletterEmail"
-                        placeholder="Enter Email" name="newsletterEmail" value="<?php echo $newsletterEmail; ?>">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-4">Subscribe</button>
-                </div>
-                </div>
-            </form>
-            </section>
-        </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-<?php require_once "includes_php\\GenericFooter.php"; ?>
-        </div>
-    </footer>
-</body>
-</html>
+<!-- START Footer -->
+<?php require_once "includes_php\\templates\\subscribtionFooter.php"; ?>
+<!-- END Footer -->
+<!-- END Body -->
+<!-- END HTML DOCUMENT -->
