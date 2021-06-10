@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+<?php 
+include('inc/header.php');
+?>
 <title>!!!TEST!!!</title>
-<script src="js/ajax_subscribe.js"></script>
+<script src="js/subscribe.js"></script>
 <link rel="stylesheet" href="css/style.css">
+<?php include('inc/container.php');?>
 <div class="content"> 
 	<div class="container-fluid">
 		<h2>!!!TEST!!!</h2>
@@ -17,7 +13,10 @@
 				<div class="main-content">
 					<div class="susbcribe-container">
 						<div class="top">
-							<h2>Subscribe Now</h2>													
+							<h2>Subscribe Now</h2>
+							<h3>Enroll for our <span>free</span> updates</h3>
+							<li>We will send you weekly updates</li>
+							<li>Get daily articles and latest news</li>
 						</div>
 						<div class="bottom">							
 							<div class="status"></div>						
@@ -26,7 +25,7 @@
 								<span class="text-danger hidden" id="nameError"></span>
 								<input type="email" class="form-control" id="email" placeholder="E-mail" required="">
 								<span class="text-danger hidden" id="emailError"></span>
-								<input type="button" id="subscribeButton" value="Subscribe Now">
+								<input type="button" id="subscribe" value="Subscribe Now">
 							</form>
 						</div>
 					</div>
@@ -35,5 +34,5 @@
 		</div>	 
 	</div>       
 </div>   		
-</body>
-</html>
+<?php include('inc/footer.php');?>
+
