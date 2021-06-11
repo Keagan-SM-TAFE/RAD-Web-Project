@@ -1,6 +1,6 @@
 <?php
+include_once "sanitiseContactForm.php";
 $messageSent = false;
-require_once "sanitiseContactForm.php";
 if (count($_POST)>0)
 {
     if (isset($_POST['contactName']) && isset($_POST['contactEmail']) && isset($_POST['contactSubject']) && isset($_POST['contactMessage']))
@@ -15,7 +15,7 @@ if (count($_POST)>0)
             $userEmail = $_POST['contactEmail'];
             $messageSubject = $_POST['contactSubject'];
             $message = $_POST['contactMessage'];
-            $emailFrom = 'From: moviedatabase';
+            $emailFrom = 'From: localhost/moviedatabase';
             $emailSendTo = "vivokew965@pidhoes.com";
             $emailMessageBody = "";
 
@@ -30,14 +30,21 @@ if (count($_POST)>0)
             }
             else
             {
-                echo "Error: Message could not send";
+                echo "Error:1";
             }
         }
+        else
+        {
+            echo "Error:2";
+        }
+    }
+    else
+    {
+        echo "Error:3";
     }
 }
 else
-            {
-                echo "Error: Message could not post";
-            }
-
+{
+    echo "Error:4";
+}
 ?>

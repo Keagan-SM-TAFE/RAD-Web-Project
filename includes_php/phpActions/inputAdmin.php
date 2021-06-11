@@ -20,7 +20,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //Connection Information From Server Configuration file
-	require_once "Database_Config\\configDeveloper.php";
+	require_once "includes_php\\databaseConnection\\configDeveloper.php";
      // Validate username
     if(empty(trim($_POST["username"]))){
         $usernameTest = "Please enter a username.";

@@ -1,5 +1,6 @@
 <!-- START Head -->
 <?php require_once "includes_php\\templates\\head.php"; ?>
+<script src="main.js"></script>
 <!-- END Head -->
 <!-- START Body -->
 <?php require_once "includes_php\\templates\\navBar.php"; ?>
