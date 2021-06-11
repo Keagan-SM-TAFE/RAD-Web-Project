@@ -11,6 +11,9 @@
 <!-- All the important stuff for the Jummbotron/Showcase -->
 <?php require_once "includes_php\\jumbotron.php"; ?>
 
+<!-- All the important stuff for unsuscribe -->
+<?php require_once "privateAdmin\\adminUnsuscribe.php"; ?>
+
 <!-- Start of the main content -->
 <section class="container-fluid">
 <?php
