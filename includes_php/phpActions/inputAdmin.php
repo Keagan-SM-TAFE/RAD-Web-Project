@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     	echo '<span style="color:#cc2900;">Please enter an email address</span><br>';
     } else {
 
-    	if(!(str_contains($_POST["email"], '@'))){
+    	if(!(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i', trim($_POST['username'])))){
     		$confirmEmail = "Please enter a valid email address";
     		echo '<span style="color:#cc2900;">Please enter a valid email address</span><br>';
     	}
