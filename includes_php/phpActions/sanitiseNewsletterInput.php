@@ -25,7 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     * newsletterEmail
     */
     if (isset($_POST["newsletterEmail"])) {
-        $verifiedEmail = testUserInput($_POST["newsletterEmail"]);
+        if (preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $_POST["newsletterEmail"])) {
+           $verifiedEmail = testUserInput($_POST["newsletterEmail"]); 
+        }
     }
     /*
     * Only run request when the form is submitted, not when the page reloads

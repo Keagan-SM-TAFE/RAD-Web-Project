@@ -47,8 +47,6 @@ else:
 endif;
 ?>
     <br><br><br><br><br><br><br><br><br>
-
-
 <!-- START Footer -->
 <?php require_once "includes_php\\templates\\subscribtionFooter.php"; ?>
 <!-- END Footer -->
