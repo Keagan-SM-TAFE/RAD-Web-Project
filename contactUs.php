@@ -19,20 +19,24 @@ else:
 <div class="container">
     <form action="includes_php\phpActions\sendMessage.php" method="POST" class="form">
         <div class="mb-3">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Enter Name..." tabindex="1" required>
+            <label for="contactName" class="form-label">Your Name</label>
+            <input type="text" class="form-control form-control-lg" id="contactName" 
+            name="contactName" placeholder="Enter Name..." tabindex="1" required>
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Your Email</label>
-            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Enter Email..." tabindex="2" required>
+            <label for="contactEmail" class="form-label">Your Email</label>
+            <input type="email" class="form-control form-control-lg" id="contactEmail" 
+            name="contactEmail" placeholder="Enter Email..." tabindex="2" required>
         </div>
         <div class="mb-3">
-            <label for="subject" class="form-label">Subject</label>
-            <input type="text" class="form-control form-control-lg" id="subject" name="subject" placeholder="Enter Subject..." tabindex="3" required>
+            <label for="contactSubject" class="form-label">Subject</label>
+            <input type="text" class="form-control form-control-lg" id="contactSubject" 
+            name="contactSubject" placeholder="Enter Subject..." tabindex="3" required>
         </div>
         <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control form-control-lg" rows="5" cols="50" id="message" name="message" placeholder="Enter Message..." tabindex="4"></textarea>
+            <label for="contactMessage" class="form-label">Message</label>
+            <textarea class="form-control form-control-lg" rows="5" cols="50" id="contactMessage" 
+            name="contactMessage" placeholder="Enter Message..." tabindex="4"></textarea>
         </div>
         <div>
             <button type="submit" class="btn btn-outline-success btn-lg">Send Message!</button>
