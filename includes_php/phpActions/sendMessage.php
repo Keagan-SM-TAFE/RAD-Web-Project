@@ -13,7 +13,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) 
         $messageSubject = $_POST['subject'];
         $message = $_POST['message'];
         $emailFrom = 'From: moviedatabase';
-        $emailSendTo = "keagan554@hotmail.com";
+        $emailSendTo = "vivokew965@pidhoes.com";
         $emailMessageBody = "";
 
         $emailMessageBody .= "From: ".$userName. "\r\n";
