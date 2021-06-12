@@ -18,10 +18,10 @@
                     <a class="nav-link" href="topSearches.php">Top Searches</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contactUs.php">Contact Us</a>
+                    <a class="nav-link" href="searchRating.php">Top Rating</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">#About</a>
+                    <a class="nav-link" href="contactUs.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">#News</a>
