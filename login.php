@@ -30,51 +30,46 @@
 
 
 <?php
+$ERROR = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
    $username = $_POST['username'];
    $password = $_POST['password'];
    $conn = openConn();
-
-   if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
-  }
-  
-   $query = "SELECT * FROM moviedatabase_admin WHERE Username = '$username' AND Password1 = '$password'";
-   $result = mysqli_query($openConn,$query);
-   $row = mysqli_fetch_array($result, MYSQLI_NUM);
-   if($row['Username'] == $username && $row['Password1'] == $password)
+   $query = "SELECT * FROM moviedatabase_admin WHERE Username = '$username' AND Password1 = '$password';";
+   $result = mysqli_query($conn,$query);
+   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+   if(($row["Username"] == $username) && ($row["Password1"] == $password))
    {
-       header("Location:privateAdmin/adminPortal");
-   }
+        header("Location:privateAdmin/adminPortal");
+   }else {$ERROR = "Please enter a correct username or password";}
 }
 ?>
 
 <!-- START of Main Website Content -->
-
 
 <section class="container-fluid">
     <div class="container col-lg-8">
         <h2>Administrator Sign In</h2>
         <br>
     </div>
- 	<div class="container col-lg-8">
- 		<form method="post" class = "col-lg-4" action="">
-            <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" class="form-control form-control-lg" id="username" 
-                placeholder="Enter Username"  name="username" value="">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control form-control-lg" id="genre" 
+    <div class="container col-lg-8">
+        <form method="post" class = "col-lg-4" action="">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" class="form-control form-control-lg" id="username" 
+                            placeholder="Enter Username"  name="username" value="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" class="form-control form-control-lg" id="genre" 
                             placeholder="Enter Password"  name="password" value="">
-            </div>
-                <button type="submit" class="btn btn-outline-success btn-lg">Login</button>
-                <br><br>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success btn-lg">Login</button>
+                    <br><br>
         </form>  
- 	</div>
+    </div>
+    <?php echo $ERROR; ?>
 </section>
 <br><br><br><br><br><br><br><br><br><br>
 
