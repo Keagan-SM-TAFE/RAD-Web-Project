@@ -1,4 +1,23 @@
-<!-- START Head -->
+
+<?php
+/*
+ * Short description for file
+ * Test and signin an Administrator 
+ * Sets the error message if there is an error with the user input
+ *
+ * PHP version 8
+ *
+ * @category  Rapid_Application_Development
+ * @package   PEAR
+ * @author    Keagan Young <keaganyoun554@gmail.com>
+ * @author    Andrew Tuitupou <Atuitupou2@gmail.com>
+ * @copyright 1997-2021 The PHP Group
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @link      https://pear.php.net/package/PEAR
+ */
+ ?>
+
+ <!-- START Head -->
 <?php require_once "includes_php\\templates\\head.php"; ?>
 <!-- END Head -->
 <!-- START Body -->
@@ -6,12 +25,14 @@
 <!-- START Showcase -->
 <?php require_once "includes_php\\templates\\showcase.php"; ?>
 <!-- END Showcase -->
+<!-- Connection -->
+<?php require_once "includes_php\\databaseConnection\\databaseConnection.php"; ?>
+<!-- START login -->
+<?php require_once "includes_php\\phpActions\\Adminlogin.php"; ?>
 <!-- START of Main Website Content -->
+
+
 <section class="container-fluid">
-<?php
-	require_once "includes_php\\databaseConnection\\databaseConnection.php";
-	$username = $password = null;
-?>
     <div class="container col-lg-8">
         <h2>Administrator Sign In</h2>
         <br>
@@ -30,23 +51,9 @@
                     </div>
                     <button type="submit" class="btn btn-outline-success btn-lg">Login</button>
                     <br><br>
-                </form>
-<?php 
-    if ($username_err != '') {
-        echo $username_err; echo '<br>';
-    }
-    if ($password_err != '') {
-        echo $password_err; echo '<br>';
-    }
-    if ($login_err != '') {
-        echo $login_err; echo '<br>';
-    }
-?>
+        </form>  
  	</div>
 </section>
 <br><br><br><br><br><br><br><br><br><br>
-<!-- START Footer -->
+
 <?php require_once "includes_php\\templates\\genericFooter.php"; ?>
-<!-- END Footer -->
-<!-- END Body -->
-<!-- END HTML DOCUMENT -->

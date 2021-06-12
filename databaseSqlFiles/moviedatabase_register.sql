@@ -7,6 +7,15 @@
 -- Server version: 5.6.34
 -- PHP Version: 7.1.11
 
+-- phpMyAdmin SQL Dump
+-- version 4.7.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: May 28, 2021 at 02:44 AM
+-- Server version: 5.6.34
+-- PHP Version: 7.1.11
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -21,6 +30,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `moviedatabase`
 --
+
+CREATE DATABASE IF NOT EXISTS `moviedatabase`;
+USE `moviedatabase`;
 
 -- --------------------------------------------------------
 
@@ -37,9 +49,10 @@ CREATE TABLE IF NOT EXISTS `moviedatabase_admin` (
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `moviedatabase_admin` (Email, Username, Password1)
-VALUES ('Atuitupou2@gmail.com','thetruth2451','password');
-INSERT INTO `moviedatabase_admin` (Email, Username, Password1)
-VALUES ('keaganyoung554@gmail.com','keagan','password');
+
+INSERT INTO `moviedatabase_admin` (ID,Email,Username,Password1)
+VALUES (NULL,'Atuitupou2@gmail.com','thetruth2451','password');
+INSERT INTO `moviedatabase_admin` (ID,Email,Username,Password1)
+VALUES (NULL,'keaganyoung554@gmail.com','keagan','password');
 
 
