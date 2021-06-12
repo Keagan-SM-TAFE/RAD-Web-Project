@@ -7,6 +7,15 @@
 -- Server version: 5.6.34
 -- PHP Version: 7.1.11
 
+-- phpMyAdmin SQL Dump
+-- version 4.7.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: May 28, 2021 at 02:44 AM
+-- Server version: 5.6.34
+-- PHP Version: 7.1.11
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -22,6 +31,9 @@ SET time_zone = "+00:00";
 -- Database: `moviedatabase`
 --
 
+CREATE DATABASE IF NOT EXISTS `moviedatabase`;
+USE `moviedatabase`;
+
 -- --------------------------------------------------------
 
 --
@@ -33,18 +45,14 @@ CREATE TABLE IF NOT EXISTS `moviedatabase_admin` (
   `ID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Email` varchar(82) DEFAULT NULL,
   `Username` varchar(82) DEFAULT NULL,
-  `PasswordHash` varchar(82) DEFAULT NULL
+  `Password1` varchar(82) DEFAULT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `moviedatabase_user`
---
 
-DROP TABLE IF EXISTS `moviedatabase_user`;
-CREATE TABLE IF NOT EXISTS `moviedatabase_user` (
-  `ID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `Email` varchar(82) DEFAULT NULL,
-  `Username` varchar(82) DEFAULT NULL
+INSERT INTO `moviedatabase_admin` (ID,Email,Username,Password1)
+VALUES (NULL,'Atuitupou2@gmail.com','thetruth2451','password');
+INSERT INTO `moviedatabase_admin` (ID,Email,Username,Password1)
+VALUES (NULL,'keaganyoung554@gmail.com','keagan','password');
 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `moviedatabase`
 --
-
+CREATE DATABASE IF NOT EXISTS `moviedatabase`;
+USE `moviedatabase`;
 -- --------------------------------------------------------
 
 --
