@@ -33,18 +33,13 @@ CREATE TABLE IF NOT EXISTS `moviedatabase_admin` (
   `ID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Email` varchar(82) DEFAULT NULL,
   `Username` varchar(82) DEFAULT NULL,
-  `PasswordHash` varchar(82) DEFAULT NULL
+  `Password1` varchar(82) DEFAULT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `moviedatabase_user`
---
+INSERT INTO `moviedatabase_admin` (Email, Username, Password1)
+VALUES ('Atuitupou2@gmail.com','thetruth2451','password');
+INSERT INTO `moviedatabase_admin` (Email, Username, Password1)
+VALUES ('keaganyoung554@gmail.com','keagan','password');
 
-DROP TABLE IF EXISTS `moviedatabase_user`;
-CREATE TABLE IF NOT EXISTS `moviedatabase_user` (
-  `ID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `Email` varchar(82) DEFAULT NULL,
-  `Username` varchar(82) DEFAULT NULL
 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
