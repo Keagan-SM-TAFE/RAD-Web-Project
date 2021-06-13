@@ -21,7 +21,7 @@ Using BootStrap to implement a responsive design to the website.
 
 - [ ] Movie rating system
 - [ ] top ratings graph
-- [ ] 
+- [ ] movie leader board
 
 ### Important to note
 
