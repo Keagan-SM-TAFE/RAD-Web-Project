@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
 <!-- All the important stuff for the <head> -->
-<?php require_once "includes_php\\head.php"; ?>
+<?php require_once "..\\includes_php\\templates\\head.php"; ?>
+
 </head>
 <body>
 <!-- All the important stuff for the navbar -->
-<?php require_once "includes_php\\navBar.php"; ?>
+<?php require_once "..\\includes_php\\templates\\navBar.php"; ?>
 
 <!-- All the important stuff for the Jummbotron/Showcase -->
-<?php require_once "includes_php\\jumbotron.php"; ?>
+<?php require_once "..\\includes_php\\templates\\showcase.php"; ?>
 
 <!-- Start of the main content -->
 <section class="container-fluid">
 <?php
 
-require_once "includes_php\\databaseConnection\\databaseConnection.php";
+require_once "..\\includes_php\\databaseConnection\\databaseConnection.php";
 	$unsuscribe= null;
 ?>
     <div class="container col-lg-8">
@@ -37,7 +38,7 @@ require_once "includes_php\\databaseConnection\\databaseConnection.php";
 <!-- All the important stuff for the <footer> -->
     <footer class="bg-light text-center">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        <?php require_once "includes_php\\templates\\genericFooter.php"; ?>
+        <?php require_once "..\\includes_php\\templates\\genericFooter.php"; ?>
         </div>
     </footer>
 </body>

@@ -17,17 +17,7 @@
  */
  ?>
 
- <!-- START Head -->
-<?php require_once "includes_php\\templates\\head.php"; ?>
-<!-- END Head -->
-<!-- START Body -->
-<?php require_once "includes_php\\templates\\navBar.php"; ?>
-<!-- START Showcase -->
-<?php require_once "includes_php\\templates\\showcase.php"; ?>
-<!-- END Showcase -->
-<!-- Connection -->
 <?php require_once "includes_php\\databaseConnection\\databaseConnection.php"; ?>
-
 
 <?php
 $ERROR = "";
@@ -38,17 +28,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
    $conn = openConn();
    $query = "SELECT * FROM moviedatabase_admin WHERE Username = '$username' AND PasswordHash = '$password';";
    $result = mysqli_query($conn,$query);
+   $resultCheck = mysqli_num_rows($result);
    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-   if(($row["Username"] == $username)
-    {echo 'works';}
 
-   if($row["PasswordHash"] == $password))
-   {echo 'works';}
-       
+   if(($row['Username'] ==  $username) &&($row['PasswordHash'] ==  $password))
+   {header("Location: privateAdmin/adminPortal.php");}
    //}else {$ERROR = "Please enter a correct username or password";}
-   // header("Location:privateAdmin/adminPortal");
+   // ;
 }
 ?>
+
+ <!-- START Head -->
+<?php require_once "includes_php\\templates\\head.php"; ?>
+<!-- END Head -->
+<!-- START Body -->
+<?php require_once "includes_php\\templates\\navBar.php"; ?>
+<!-- START Showcase -->
+<?php require_once "includes_php\\templates\\showcase.php"; ?>
+<!-- END Showcase -->
+<!-- Connection -->
+
+
 
 <!-- START of Main Website Content -->
 
