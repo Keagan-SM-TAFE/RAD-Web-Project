@@ -2,7 +2,7 @@
 <footer class="bg-light text-center">
         <div class="container p-4 pb-0">
             <section>
-            <form action="includes_php\phpActions\subscribe.php" method="POST">
+            <form action="..\phpActions\subscribe.php" method="POST">
                 <div class="row d-flex justify-content-center">
                 <div class="col-auto">
                     <p class="pt-2">
