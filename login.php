@@ -33,8 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
    if(($row['Username'] ==  $username) &&($row['PasswordHash'] ==  $password))
    {header("Location: privateAdmin/adminPortal.php");}
-   //}else {$ERROR = "Please enter a correct username or password";}
-   // ;
+   else{$ERROR = "PLease enter a correct username and password";}
 }
 ?>
 
@@ -71,9 +70,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     </div>
                     <button type="submit" class="btn btn-outline-success btn-lg">Login</button>
                     <br><br>
-        </form>  
+        </form> 
+        <?php echo $ERROR; ?> 
     </div>
-    <?php echo $ERROR; ?>
+    
 </section>
 <br><br><br><br><br><br><br><br><br><br>
 
