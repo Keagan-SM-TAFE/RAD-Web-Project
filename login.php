@@ -36,13 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
    $username = $_POST['username'];
    $password = $_POST['password'];
    $conn = openConn();
-   $query = "SELECT * FROM moviedatabase_admin WHERE Username = '$username' AND Password1 = '$password';";
+   $query = "SELECT * FROM moviedatabase_admin WHERE Username = '$username' AND PasswordHash = '$password';";
    $result = mysqli_query($conn,$query);
    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-   if(($row["Username"] == $username) && ($row["Password1"] == $password))
-   {
-        header("Location:privateAdmin/adminPortal");
-   }else {$ERROR = "Please enter a correct username or password";}
+   if(($row["Username"] == $username)
+    {echo 'works';}
+
+   if($row["PasswordHash"] == $password))
+   {echo 'works';}
+       
+   //}else {$ERROR = "Please enter a correct username or password";}
+   // header("Location:privateAdmin/adminPortal");
 }
 ?>
 
