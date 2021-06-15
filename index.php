@@ -1,3 +1,4 @@
+
 <!-- START Head -->
 <?php require_once "includes_php\\templates\\head.php"; ?>
 <!-- END Head -->
@@ -7,8 +8,10 @@
 <?php require_once "includes_php\\templates\\showcase.php"; ?>
 <!-- END Showcase -->
 <!-- START of Main Website Content -->
+
 <section class="container-fluid">
 
+<div>
 
 <?php
 /**
@@ -65,6 +68,7 @@ $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%'
                     <br><br>
                 </form>
             </div>
+
 <?php
 require_once "includes_php\\phpActions\\sanitiseUserInput.php";
 if (count($_POST)>0) {
@@ -81,7 +85,7 @@ if (count($_POST)>0) {
         echo    '
                 <div class="container">
                 <div class="table-responsive">
-                <table class="table table-hover table-condensed">
+                <table class="table-hover table-condensed">
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
@@ -95,6 +99,7 @@ if (count($_POST)>0) {
                         <th>Genre</th>
                         <th>Aspect</th>
                         <th>searchNum</th>
+                        <th>Movie Rating</th>
                     </tr>
                 ';
         //Update searchNum value from search results
@@ -118,6 +123,10 @@ if (count($_POST)>0) {
                         <td>" . $row["Genre"] . "</td>
                         <td>" . $row["Aspect"] . "</td>
                         <td>" . $row["searchNum"] . "</td>
+                        <td>
+                           "?><?php include "includes_php\\templates\\rating.php";?>
+                           <?php echo "
+                        </td>
                     </tr>
                     ";
         }
@@ -126,6 +135,7 @@ if (count($_POST)>0) {
                 </div>
                 </div>
                 ";
+
     }
 }
 ?>

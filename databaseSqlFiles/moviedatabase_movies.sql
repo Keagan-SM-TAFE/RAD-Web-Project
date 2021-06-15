@@ -43,7 +43,8 @@ CREATE TABLE IF NOT EXISTS `moviedatabase_movies` (
   `Year` int(4) DEFAULT NULL,
   `Genre` varchar(17) DEFAULT NULL,
   `Aspect` varchar(6) DEFAULT NULL,
-  `searchNum` int(4) NOT NULL
+  `searchNum` int(4) NOT NULL,
+  `MovieRating` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
