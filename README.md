@@ -10,12 +10,12 @@ Using BootStrap to implement a responsive design to the website.
 ## To-Do list for Sprint Two
 
 - [X] Admin Login in button to Navbar
-- [ ] Re-Design Database
+- [X] Re-Design Database
 - [X] Admin login functionality
 - [X] Add News Letter sign up to Footer
 - [ ] Send News Letters to Email
 - [ ] Mark Email as No Not Send from news letter list
-- [ ] Admin page
+- [X] Admin page
 
 ## To-Do list for Sprint Three
 
