@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <!-- START of Main Website Content -->
 <section class="container-fluid">
     <div class="container col-lg-8">
-        <h2>Administrator Sign In</h2>
+        <h2>Admin Sign In</h2>
         <br>
     </div>
     <div class="container col-lg-8">
