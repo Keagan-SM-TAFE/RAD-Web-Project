@@ -5,17 +5,17 @@
             <img src="..\..\images\heroImage.jpg" class="d-block mx-lg-auto img-fluid" 
             alt="Movie Search Image" width="700" height="500" loading="lazy">
         </div>
-    <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">Movie Database Search Project</h1>
-        <p class="lead">An application designed to search a movie database and 
-        return the results in an HTML table form.
-        the application uses PHP to search a MySQL database and return only the 
-        movies that match the search criteria.
-        Movies can be searched by Title, Genre, Rating, or Year.</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <h4>Keagan Young.</h4>      
-            <h4>Andrew Tuitupou.</h4>
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">Movie Database Search Project</h1>
+            <p class="lead">An application designed to search a movie database and 
+            return the results in an HTML table form.
+            the application uses PHP to search a MySQL database and return only the 
+            movies that match the search criteria.
+            Movies can be searched by Title, Genre, Rating, or Year.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <h4>Keagan Young.</h4>      
+                <h4>Andrew Tuitupou.</h4>
+            </div>
         </div>
-    </div>
     </div>
 </div>

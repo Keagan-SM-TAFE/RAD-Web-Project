@@ -48,15 +48,11 @@
 <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <!-- Page Wrapper -->
 <div id="wrapper">
-
     <?php include_once('sidebar.php'); ?>
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
         <!-- Main Content -->
         <div id="content">
-
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <div class="mb-4"></div>
@@ -64,7 +60,6 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Subscribers</h1>
                 </div>
-
                 <div class="card shadow mb-4">
                     <div class="card-body">
                         <div class="table-responsive">
@@ -80,7 +75,6 @@
                                     </tr>
                                 </thead>
                                 <tfoot>
-
                                 </tfoot>
                                 <tbody>
                                     <?php
@@ -117,13 +111,10 @@
                 </div>
             </div>
             <!-- /.container-fluid -->
-
         </div>
         <!-- End of Main Content -->
-
     </div>
     <!-- End of Content Wrapper -->
-
 </div>
 <!-- End of Page Wrapper -->
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>

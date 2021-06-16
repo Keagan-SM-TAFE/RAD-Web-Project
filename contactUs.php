@@ -1,21 +1,15 @@
-
 <?php
 $ERROR = "";
-
 use PHPMailer\PHPMailer\PHPMailer;
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-    
     $name = $_POST['contactName'];
     $email = $_POST['email'];
     $subject = $_POST['contactSubject'];
     $contactMessage = $_POST['contactMessage'];
-
     require_once "PHP_Mailer/PHPMailer.php";
     require_once "PHP_Mailer/SMTP.php";
     require_once "PHP_Mailer/Exception.php";
-
     $mail = new PHPMailer();
     $mail->isSMTP();
     $mail->Host = "smtp.gmail.com";
@@ -24,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $mail->Password = "";
     $mail->Port = 465;
     $mail->SMTPSecure = "ssl";
-
     $mail->isHTML(true);
     $mail->setFrom("Atuitpou2@gmail.com",$name);
     $mail->addAddress("thetruth2451@gmail.com");
@@ -42,13 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $status = "failed";
         $response = "Something went wrong: <br>". $mail->ErrorInfo;
     }
-
     //exit(json_encode(array("status" => $status, "response" => $response)));
-
 }
-
 ?>
-
 <!-- START Head -->
 <?php require_once "includes_php\\templates\\head.php"; ?>
 <script src="main.js"></script>
@@ -60,9 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <!-- END Showcase -->
 <!-- START of Main Website Content -->
 <section class="container-fluid">
-
-
-
 <?php
 if($messageSent):
 ?>

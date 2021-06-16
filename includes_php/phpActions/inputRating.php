@@ -9,7 +9,7 @@
         $rating =$_POST['rating'];
         $conn = openConn();
         $query = "UPDATE moviedatabase_movies SET
-         MovieRating= '$rating' WHERE ID='$id';";
+         MovieRating= '$rating' WHERE ID = '$id';";
          mysqli_query($conn,$query);
          closeConn($conn);
     }

@@ -20,7 +20,7 @@ require_once "..\\includes_php\\databaseConnection\\databaseConnection.php";
 	$unsuscribe= null;
 ?>
     <div class="container col-lg-8">
-    <h2>Administrator PortHole</h2>
+    <h2>Admin Portal</h2>
     <br>
     </div>
  	<div class="container col-lg-8">

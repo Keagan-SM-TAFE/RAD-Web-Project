@@ -8,8 +8,6 @@
 <!-- END Showcase -->
 <!-- START of Main Website Content -->
 <section class="container-fluid">
-
-
 <?php
 /**
  * Short description for file
@@ -33,7 +31,6 @@ $conn = openConn();
 $title = $genre = $rating = $year = null;
 $titleError = $genreError = $ratingError = $yearError = null;
 $verifiedTitle = $verifiedGenre = $verifiedRating = $verifiedYear = null;
-
 //Default Query Statemet
 $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%' ";
 ?>
@@ -142,10 +139,12 @@ if (count($_POST)>0) {
     </section>
     <br><br><br><br><br>
 <?php closeConn($conn); ?>
+<!-- Required Java Script -->
+<!-- For the movie Rating System -->
 <script type="text/javascript">
   var $star_rating = $('.star-rating .far');
   var SetRatingStar = function(id) {
-    var $start_current = $('.row'+id+' .far');
+    var $start_current = $('.row' + id + ' .far');
     $('.row'+id).css('pointer-events','none');
     jQuery.ajax({
         type: 'POST',
@@ -159,21 +158,19 @@ if (count($_POST)>0) {
         }
     });
     return $start_current.each(function() {
-      if (parseInt($start_current.siblings('input.rating-value'+id).val()) >= parseInt($(this).data('rating'))) {
+      if (parseInt($start_current.siblings('input.rating-value' + id).val()) >= parseInt($(this).data('rating'))) {
         return $(this).removeClass('far').addClass('fas');
       } else {
         return $(this).removeClass('fas').addClass('far');
       }
     });
   };
-
   $star_rating.on('click', function() {
     var id = $(this).data('id');
-    var $start_current = $('.row'+id+' .far');
+    var $start_current = $('.row' + id + ' .far');
     $start_current.siblings('input.rating-value'+id).val($(this).data('rating'));
     return SetRatingStar(id);
   });
-
 </script>
 <!-- START Footer -->
 <?php require_once "includes_php\\templates\\subscribtionFooter.php"; ?>

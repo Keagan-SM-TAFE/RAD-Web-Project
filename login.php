@@ -1,4 +1,3 @@
-
 <?php
 /*
  * Short description for file
@@ -16,9 +15,7 @@
  * @link      https://pear.php.net/package/PEAR
  */
  ?>
-
 <?php require_once "includes_php\\databaseConnection\\databaseConnection.php"; ?>
-
 <?php
 session_start();
 $ERROR = "";
@@ -31,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
    $result = mysqli_query($conn,$query);
    $resultCheck = mysqli_num_rows($result);
    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
    if(($row['Username'] ==  $username) &&($row['Password1'] ==  $password))
    {
      $_SESSION['username'] = $row['Username'];
@@ -41,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
    }
 }
 ?>
-
  <!-- START Head -->
 <?php require_once "includes_php\\templates\\head.php"; ?>
 <!-- END Head -->
@@ -51,11 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <?php require_once "includes_php\\templates\\showcase.php"; ?>
 <!-- END Showcase -->
 <!-- Connection -->
-
-
-
 <!-- START of Main Website Content -->
-
 <section class="container-fluid">
     <div class="container col-lg-8">
         <h2>Administrator Sign In</h2>
@@ -78,8 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         </form> 
         <?php echo $ERROR; ?> 
     </div>
-    
 </section>
 <br><br><br><br><br><br><br><br><br><br>
-
 <?php require_once "includes_php\\templates\\genericFooter.php"; ?>

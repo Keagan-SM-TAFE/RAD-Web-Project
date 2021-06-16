@@ -37,13 +37,13 @@ $searchQuery = "SELECT AVG(moviedatabase_ratings.rating) as rate, moviedatabase_
 $stmt = $conn->prepare($searchQuery);
 $stmt->execute();
 $result = $stmt->get_result();
-$i = 0;
+$count = 0;
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
         $gridData[$row['title']] = round($row['rate'],1);
-        if($i == 0){
+        if($count == 0){
           $maxYValue = round($row['rate'],1);
-          $i++;
+          $count++;
         }
     }
 }
@@ -84,17 +84,17 @@ $axisColor = imagecolorallocate($topTenImageChart, 85, 85, 85);
 $labelColor = $axisColor;
 $gridColor = imagecolorallocate($topTenImageChart, 212, 212, 212);
 $barColor = array(
-              imagecolorallocate($topTenImageChart, 255, 241, 0),
-              imagecolorallocate($topTenImageChart, 255, 140, 0),
-              imagecolorallocate($topTenImageChart, 232, 14, 35),
-              imagecolorallocate($topTenImageChart, 236, 0, 140),
-              imagecolorallocate($topTenImageChart, 104, 33, 122),
-              imagecolorallocate($topTenImageChart, 0, 24, 143),
-              imagecolorallocate($topTenImageChart, 0, 128, 142),
-              imagecolorallocate($topTenImageChart, 0, 178, 148),
-              imagecolorallocate($topTenImageChart, 0, 158, 73),
-              imagecolorallocate($topTenImageChart, 186, 216, 10)
-          );
+    imagecolorallocate($topTenImageChart, 255, 241, 0),
+    imagecolorallocate($topTenImageChart, 255, 140, 0),
+    imagecolorallocate($topTenImageChart, 232, 14, 35),
+    imagecolorallocate($topTenImageChart, 236, 0, 140),
+    imagecolorallocate($topTenImageChart, 104, 33, 122),
+    imagecolorallocate($topTenImageChart, 0, 24, 143),
+    imagecolorallocate($topTenImageChart, 0, 128, 142),
+    imagecolorallocate($topTenImageChart, 0, 178, 148),
+    imagecolorallocate($topTenImageChart, 0, 158, 73),
+    imagecolorallocate($topTenImageChart, 186, 216, 10)
+);
 $titleColor = imagecolorallocate($topTenImageChart, 5, 5, 5);
 //flood fill
 imagefill($topTenImageChart, 0, 0, $backgroundColor);
@@ -139,7 +139,7 @@ imageline
 */
 $barSpacing = $gridWidth / count($gridData);
 $itemX = $gridLeft + $barSpacing / 2;
-$i = 0;
+$count = 0;
 foreach ($gridData as $key => $value) {
     // Draw the bar
     $x1 = $itemX - $barWidth ;
@@ -147,7 +147,7 @@ foreach ($gridData as $key => $value) {
     $x2 = $itemX + $barWidth / 2;
     $y2 = $gridBottom - 1;
     //draw a rectangle
-    imagefilledrectangle($topTenImageChart, $x1, $y1, $x2, $y2, $barColor[$i]);
+    imagefilledrectangle($topTenImageChart, $x1, $y1, $x2, $y2, $barColor[$count]);
     //imagefilledrectangle ( resource $topTenImageChart , int $x1 , int $y1 ,
     //int $x2 , int $y2 , int $color )
     // Draw the label
@@ -163,7 +163,7 @@ foreach ($gridData as $key => $value) {
     //imagettftext ( resource $topTenImageChart , float $size , float $angle ,
     //int $x , int $y , int $color , string $fontfile , string $text )
     $itemX += $barSpacing;
-    $i++;
+    $count++;
 }
 /*
 * Output image to browser

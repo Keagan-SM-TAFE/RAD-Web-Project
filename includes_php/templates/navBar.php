@@ -26,22 +26,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contactUs.php">Contact Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">#News</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="#">#News</a>
-                </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           		<li class="nav-item">
-          		<a class="nav-link me-auto" href="login.php">
-          			<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-  						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-					</svg>
-          		</a>
+                    <a class="nav-link me-auto" href="login.php">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg>
+                    </a>
           		</li>
-          </ul>
+            </ul>
         </div>
     </div>
 </nav>

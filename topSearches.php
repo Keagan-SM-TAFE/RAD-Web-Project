@@ -38,13 +38,13 @@ ORDER BY `moviedatabase_movies`.`searchNum` DESC LIMIT 10";
 $stmt = $conn->prepare($searchQuery);
 $stmt->execute();
 $result = $stmt->get_result();
-$i = 0;
+$count = 0;
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
         $gridData[$row['title']] = $row['searchNum'];
-        if($i == 0){
+        if($count == 0){
           $maxYValue = $row['searchNum'];
-          $i++;
+          $count++;
         }
     }
 }

@@ -30,7 +30,6 @@ Some aspects of Bootstrap 4 will not work as they heve been changed in the curre
 Beootstrap is delivered using 'jsDelivr' (a free open source CDN)
 For more infomation on Bootstrap 5 visit https://getbootstrap.com/
 
-
 ### File access
 
 The administrator porthole will not appear after the login information is entered unless the configuration files
