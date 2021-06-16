@@ -33,22 +33,21 @@ $conn = openConn();
  */
 $gridData = array();
 $maxYValue = 0;
-$searchQuery = "SELECT title, searchNum FROM `moviedatabase_movies` 
+$searchQuery = "SELECT title, searchNum FROM `moviedatabase_movies`
 ORDER BY `moviedatabase_movies`.`searchNum` DESC LIMIT 10";
 $stmt = $conn->prepare($searchQuery);
 $stmt->execute();
 $result = $stmt->get_result();
-
+$i = 0;
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
         $gridData[$row['title']] = $row['searchNum'];
-    }
-    
-    if ($row['searchNum'] >= $maxYValue) {
-        $maxYValue .= $row['searchNum'];
+        if($i == 0){
+          $maxYValue = $row['searchNum'];
+          $i++;
+        }
     }
 }
-$maxYValue .= 80;
 /*
 * image settings and create image
 */
@@ -71,7 +70,7 @@ $fontSize = 20;
 //the margin between the label and grid axis
 $labelMargin = 8;
 //max y-axis value
-$yAxisMaxValue .= $maxYValue;
+$yAxisMaxValue = $maxYValue;
 //distance between grid lines and lables on y-axis
 $yAxisLabelSpan = $maxYValue / 5;
 //$red = imagecolorallocate($im,255,0,0);
@@ -80,7 +79,7 @@ $topTenImageChart = imagecreate($imageChartWidth, $imageChartHeight);
 //imagecreate ( int $width , int $height)
 //image colors
 $backgroundColor = imagecolorallocate($topTenImageChart, 255, 255, 255);
-//imagecolorallocate ( resource $topTenImageChart , int $red , 
+//imagecolorallocate ( resource $topTenImageChart , int $red ,
 //int $green , int $blue)
 $axisColor = imagecolorallocate($topTenImageChart, 85, 85, 85);
 $labelColor = $axisColor;
@@ -89,8 +88,8 @@ $barColor = imagecolorallocate($topTenImageChart, 47, 133, 217);
 $titleColor = imagecolorallocate($topTenImageChart, 5, 5, 5);
 //flood fill
 imagefill($topTenImageChart, 0, 0, $backgroundColor);
-//imagefill ( resource $topTenImageChart , int $x-startPoint , 
-//int $counter-startPoint,int $color ) 
+//imagefill ( resource $topTenImageChart , int $x-startPoint ,
+//int $counter-startPoint,int $color )
 //set the thickness for line drawing
 imagesetthickness($topTenImageChart, $lineWidth);
 //imagesetthickness ( resource $topTenImageChart , int $thickness )
@@ -103,7 +102,7 @@ for ($count = 0; $count <= $yAxisMaxValue; $count += $yAxisLabelSpan) {
     imageline
     ($topTenImageChart, $gridLeft, $counter, $gridRight, $counter, $gridColor);
     //Give the bounding box of a text using TrueType fonts
-    //This function calculates and returns the bounding box in pixels for a 
+    //This function calculates and returns the bounding box in pixels for a
     //TrueType text. draw right aligned label
     $labelBox = imagettfbbox($fontSize, 0, $font, strval($count));
     //imagettfbbox ( float $size , float $angle , string $fontfile , string $text )
@@ -112,7 +111,7 @@ for ($count = 0; $count <= $yAxisMaxValue; $count += $yAxisLabelSpan) {
     $labelY = $counter + $fontSize / 2;
     //Write text to the image using TrueType fonts
     imagettftext(
-        $topTenImageChart, $fontSize, 0, $labelX, $labelY, $labelColor, 
+        $topTenImageChart, $fontSize, 0, $labelX, $labelY, $labelColor,
         $font, strval($count)
         //imagettftext ( resource $topTenImageChart , float $size , float $angle ,
         //int $x , int $y , int $color , string $fontfile , string $text )
@@ -136,7 +135,7 @@ foreach ($gridData as $key => $value) {
     $y1 = $gridBottom - $value / $yAxisMaxValue * $gridHeight;
     $x2 = $itemX + $barWidth / 2;
     $y2 = $gridBottom - 1;
-    //draw a rectangle 
+    //draw a rectangle
     imagefilledrectangle($topTenImageChart, $x1, $y1, $x2, $y2, $barColor);
     //imagefilledrectangle ( resource $topTenImageChart , int $x1 , int $y1 ,
     //int $x2 , int $y2 , int $color )
@@ -162,7 +161,7 @@ imagedestroy($topTenImageChart);
 echo '
 <div class="text-center">
 <figure class="figure">
-    <img src="images\topTenSearchResult.png" class="figure-img 
+    <img src="images\topTenSearchResult.png" class="figure-img
     img-fluid mx-auto d-block" alt="Top Ten Search Results">
     <figcaption class="figure-caption">Top Ten Search Results</figcaption>
 </figure>
