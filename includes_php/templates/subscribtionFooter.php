@@ -2,8 +2,8 @@
 <footer class="bg-light text-center">
         <div class="container p-4 pb-0">
             <section>
-            <?php if(isset($_REQUEST['msg']) && $_REQUEST['msg'] == 'success'){  echo "<div class='alert alert-success'>You successfully subscribed to our newsletter.</div>"; }?>
-
+            <?php if(isset($_REQUEST['msg']) && $_REQUEST['msg'] == 'success')
+            {  echo "<div class='alert alert-success'>You successfully subscribed to our newsletter.</div>"; }?>
             <form action="includes_php\phpActions\subscribe.php" method="POST">
                 <div class="row d-flex justify-content-center">
                 <div class="col-auto">
@@ -41,7 +41,7 @@
             </section>
         </div>
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                <span class="text-dark"><p>Copyright &copy; 2020 - <?php print date('Y');?>
+            <span class="text-dark"><p>Copyright &copy; 2020 - <?php print date('Y');?>
                 RAD Group Project</p></span>
         </div>
     </footer>
