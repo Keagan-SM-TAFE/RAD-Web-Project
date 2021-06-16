@@ -4,8 +4,8 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">RAD Project</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-        data-bs-target="#collapsableNavBar" aria-controls="collapsableNavBar" 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapsableNavBar" aria-controls="collapsableNavBar"
         aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,7 +18,10 @@
                     <a class="nav-link" href="topSearches.php">Top Searches</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="searchRating.php">Top Rating</a>
+                    <a class="nav-link" href="searchRatings.php">Top Rating</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rating_leaderBoard.php">Leader Board</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contactUs.php">Contact Us</a>
