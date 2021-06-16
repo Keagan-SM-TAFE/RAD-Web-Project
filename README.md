@@ -13,15 +13,15 @@ Using BootStrap to implement a responsive design to the website.
 - [X] Re-Design Database
 - [X] Admin login functionality
 - [X] Add News Letter sign up to Footer
-- [ ] Send News Letters to Email
-- [ ] Mark Email as No Not Send from news letter list
+- [X] Send News Letters to Email
+- [X] Mark Email as No Not Send from news letter list
 - [X] Admin page
 
 ## To-Do list for Sprint Three
 
-- [ ] Movie rating system
-- [ ] top ratings graph
-- [ ] movie leader board
+- [X] Movie rating system
+- [X] top ratings graph
+- [X] movie leader board
 
 ### Important to note
 
