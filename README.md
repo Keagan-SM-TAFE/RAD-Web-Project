@@ -29,16 +29,3 @@ The project is using Bootstrap 5 as a responsive framework.
 Some aspects of Bootstrap 4 will not work as they heve been changed in the current version of Bootstrap.
 Beootstrap is delivered using 'jsDelivr' (a free open source CDN)
 For more infomation on Bootstrap 5 visit https://getbootstrap.com/
-
-### File access
-
-The administrator porthole will not appear after the login information is entered unless the configuration files
-are changed- The XAMPP configuration file is "httpd-vhosts.conf". The following information was pasted in
-
-<Directory "c:/<path-to-projects>/">
-        Options Indexes FollowSymLinks MultiViews
-        AllowOverride all
-        Order Deny,Allow
-        Allow from all
-        Require all granted
-</Directory>
