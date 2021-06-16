@@ -55,6 +55,5 @@ function testUserInput($userData)
 if (count($_POST)>0) {
     $verifiedName = mb_htmlentities($_POST['newsletterName']);
     $verifiedEmail = mb_htmlentities($_POST['newsletterEmail']);
-
 }
 ?>

@@ -16,7 +16,7 @@ if (count($_POST)>0)
             $messageSubject = $_POST['contactSubject'];
             $message = $_POST['contactMessage'];
             $emailFrom = 'From: localhost/moviedatabase';
-            $emailSendTo = "vivokew965@pidhoes.com";
+            $emailSendTo = "keaganyoung554@gmail.com";
             $emailMessageBody = "";
 
             $emailMessageBody .= "From: ".$userName. "\r\n";
@@ -30,21 +30,29 @@ if (count($_POST)>0)
             }
             else
             {
+                // Debugging
+                // Remove for Production
                 echo "Error:1";
             }
         }
         else
         {
+            // Debugging
+            // Remove for Production
             echo "Error:2";
         }
     }
     else
     {
+        // Debugging
+        // Remove for Production
         echo "Error:3";
     }
 }
 else
 {
+    // Debugging
+    // Remove for Production
     echo "Error:4";
 }
 ?>
