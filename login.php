@@ -20,20 +20,25 @@
 <?php require_once "includes_php\\databaseConnection\\databaseConnection.php"; ?>
 
 <?php
+session_start();
 $ERROR = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
    $username = $_POST['username'];
    $password = $_POST['password'];
    $conn = openConn();
-   $query = "SELECT * FROM moviedatabase_admin WHERE Username = '$username' AND PasswordHash = '$password';";
+   $query = "SELECT * FROM moviedatabase_admin WHERE Username = '$username' AND Password1 = '$password';";
    $result = mysqli_query($conn,$query);
    $resultCheck = mysqli_num_rows($result);
    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-   if(($row['Username'] ==  $username) &&($row['PasswordHash'] ==  $password))
-   {header("Location: privateAdmin/adminPortal.php");}
-   else{$ERROR = "PLease enter a correct username and password";}
+   if(($row['Username'] ==  $username) &&($row['Password1'] ==  $password))
+   {
+     $_SESSION['username'] = $row['Username'];
+     header("Location: privateAdmin/subscribers.php");
+   }else{
+     $ERROR = "<div class='alert alert-danger'>PLease enter a correct username and password </div>";
+   }
 }
 ?>
 
