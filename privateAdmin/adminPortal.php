@@ -2,7 +2,24 @@
 <html lang="en">
 <head>
 <!-- All the important stuff for the <head> -->
-<?php require_once "includes_php\\head.php"; ?>
+<?php 
+/**
+ * Short description for file
+ * Test and sanitise the user input
+ * Sets the error message if there is an error with the user input
+ *
+ * PHP version 8
+ *
+ * @category  Rapid_Application_Development
+ * @package   PEAR
+ * @author    Keagan Young <keaganyoun554@gmail.com>
+ * @author    Andrew Tuitupou <Atuitupou2@gmail.com>
+ * @copyright 1997-2021 The PHP Group
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @link      https://pear.php.net/package/PEAR
+ */
+require_once "includes_php\\head.php";
+?>
 </head>
 <body>
 <!-- All the important stuff for the navbar -->
@@ -14,7 +31,6 @@
 <!-- Start of the main content -->
 <section class="container-fluid">
 <?php
-
 require_once "includes_php\\databaseConnection\\databaseConnection.php";
 	$unsuscribe= null;
 ?>

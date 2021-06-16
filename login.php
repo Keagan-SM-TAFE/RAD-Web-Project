@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Short description for file
  * Test and signin an Administrator 
  * Sets the error message if there is an error with the user input
@@ -14,27 +14,25 @@
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      https://pear.php.net/package/PEAR
  */
- ?>
-<?php require_once "includes_php\\databaseConnection\\databaseConnection.php"; ?>
-<?php
+require_once "includes_php\\databaseConnection\\databaseConnection.php";
 session_start();
 $ERROR = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
-   $username = $_POST['username'];
-   $password = $_POST['password'];
-   $conn = openConn();
-   $query = "SELECT * FROM moviedatabase_admin WHERE Username = '$username' AND Password1 = '$password';";
-   $result = mysqli_query($conn,$query);
-   $resultCheck = mysqli_num_rows($result);
-   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-   if(($row['Username'] ==  $username) &&($row['Password1'] ==  $password))
-   {
-     $_SESSION['username'] = $row['Username'];
-     header("Location: privateAdmin/subscribers.php");
-   }else{
-     $ERROR = "<div class='alert alert-danger'>PLease enter a correct username and password </div>";
-   }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $conn = openConn();
+    $query = "SELECT * FROM moviedatabase_admin 
+    WHERE Username = '$username' AND Password1 = '$password';";
+    $result = mysqli_query($conn, $query);
+    $resultCheck = mysqli_num_rows($result);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if (($row['Username'] ==  $username) && ($row['Password1'] ==  $password)) {
+        $_SESSION['username'] = $row['Username'];
+        header("Location: privateAdmin/subscribers.php");
+    } else {
+        $ERROR = "<div class='alert alert-danger'>
+        PLease enter a correct username and password </div>";
+    }
 }
 ?>
  <!-- START Head -->

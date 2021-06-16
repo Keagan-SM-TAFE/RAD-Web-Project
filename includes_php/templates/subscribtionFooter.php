@@ -2,8 +2,27 @@
 <footer class="bg-light text-center">
         <div class="container p-4 pb-0">
             <section>
-            <?php if(isset($_REQUEST['msg']) && $_REQUEST['msg'] == 'success')
-            {  echo "<div class='alert alert-success'>You successfully subscribed to our newsletter.</div>"; }?>
+<?php 
+/**
+ * Short description for file
+ * Test and sanitise the user input
+ * Sets the error message if there is an error with the user input
+ *
+ * PHP version 8
+ *
+ * @category  Rapid_Application_Development
+ * @package   PEAR
+ * @author    Keagan Young <keaganyoun554@gmail.com>
+ * @author    Andrew Tuitupou <Atuitupou2@gmail.com>
+ * @copyright 1997-2021 The PHP Group
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @link      https://pear.php.net/package/PEAR
+ */
+if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == 'success') {
+    echo "<div class='alert alert-success'>You successfully 
+    subscribed to our newsletter.</div>"; 
+}
+?>
             <form action="includes_php\phpActions\subscribe.php" method="POST">
                 <div class="row d-flex justify-content-center">
                 <div class="col-auto">

@@ -1,8 +1,22 @@
 <?php
+/**
+ * Short description for file
+ * Test and sanitise the user input
+ * Sets the error message if there is an error with the user input
+ *
+ * PHP version 8
+ *
+ * @category  Rapid_Application_Development
+ * @package   PEAR
+ * @author    Keagan Young <keaganyoun554@gmail.com>
+ * @author    Andrew Tuitupou <Atuitupou2@gmail.com>
+ * @copyright 1997-2021 The PHP Group
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @link      https://pear.php.net/package/PEAR
+ */
 $ERROR = "";
 use PHPMailer\PHPMailer\PHPMailer;
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['contactName'];
     $email = $_POST['email'];
     $subject = $_POST['contactSubject'];
@@ -24,14 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $mail->Subject = ("$email ($subject)");
     $mail->Body = $contactMessage;
 
-    if($mail->send())
-    {
+    if ($mail->send()) {
         $status = "success";
         $response = "Email is sent!";
         header("Location: index.php");
-    }    
-    else
-    {
+    } else {
         $status = "failed";
         $response = "Something went wrong: <br>". $mail->ErrorInfo;
     }
@@ -86,7 +97,7 @@ else:
 <?php
 endif;
 ?>
-    <br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 <!-- START Footer -->
 <?php require_once "includes_php\\templates\\subscribtionFooter.php"; ?>
 <!-- END Footer -->

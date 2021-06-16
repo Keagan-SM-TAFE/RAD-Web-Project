@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     */
     if (isset($_POST["newsletterEmail"])) {
         if (preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $_POST["newsletterEmail"])) {
-           $verifiedEmail = testUserInput($_POST["newsletterEmail"]); 
+            $verifiedEmail = testUserInput($_POST["newsletterEmail"]); 
         }
     }
     /*

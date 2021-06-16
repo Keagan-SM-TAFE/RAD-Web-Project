@@ -42,6 +42,8 @@ function openConn()
  * Summary closeConn
  * A function to close the databse connection
  * 
+ * @param string $conn the string to sanitise
+ * 
  * @return string $conn -> close();
  */
 function closeConn($conn)
@@ -60,7 +62,7 @@ function closeConn($conn)
  * 
  * @return string mysqli_real_escape_string($conn, $string)
  */
-function mb_htmlentities($string, $hex = true, $encoding = 'UTF-8') 
+function Mb_htmlentities($string, $hex = true, $encoding = 'UTF-8') 
 {
     global $conn;
     return mysqli_real_escape_string($conn, $string);
