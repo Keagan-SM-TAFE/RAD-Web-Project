@@ -3,7 +3,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">RAD Project</span>
+    <img src="..\..\images\acmeLogo.jpg" alt="ACME Logo" width="40" height="34">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#collapsableNavBar" aria-controls="collapsableNavBar"
         aria-expanded="false" aria-label="Toggle navigation">
