@@ -7,23 +7,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $email = $_POST['email'];
     $subject = $_POST['contactSubject'];
     $contactMessage = $_POST['contactMessage'];
-    require_once "PHP_Mailer/PHPMailer.php";
-    require_once "PHP_Mailer/SMTP.php";
-    require_once "PHP_Mailer/Exception.php";
+    require_once "PHPMailer/PHPMailer.php";
+    require_once "PHPMailer/SMTP.php";
+    require_once "PHPMailer/Exception.php";
     $mail = new PHPMailer();
     $mail->isSMTP();
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     $mail->Username = "thetruth2451@gmail.com";
-    $mail->Password = "";
+    $mail->Password = "Waipawaruled1675";
     $mail->Port = 465;
     $mail->SMTPSecure = "ssl";
+
     $mail->isHTML(true);
     $mail->setFrom("Atuitpou2@gmail.com",$name);
     $mail->addAddress("thetruth2451@gmail.com");
     $mail->Subject = ("$email ($subject)");
     $mail->Body = $contactMessage;
-
     if($mail->send())
     {
         $status = "success";
@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $status = "failed";
         $response = "Something went wrong: <br>". $mail->ErrorInfo;
     }
+    //exit(json_encode(array("status" => $status, "response" => $response)));
     //exit(json_encode(array("status" => $status, "response" => $response)));
 }
 ?>
