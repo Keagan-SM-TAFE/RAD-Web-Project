@@ -34,7 +34,7 @@ Things and stuff to note about the stuffs inside the thing we created
 ### Bootstrap
 
 The project is using Bootstrap 5 as a responsive framework.
-Some aspects of Bootstrap 4 will not work as they heve been changed in the current version of Bootstrap.
+Some aspects of Bootstrap 4 will not work as they have been changed or removed in the current version of Bootstrap.
 Beootstrap is delivered using 'jsDelivr' (a free open source CDN)
 For more infomation on Bootstrap 5 visit https://getbootstrap.com/
 
