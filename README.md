@@ -23,7 +23,7 @@ Using BootStrap to implement a responsive design to the website.
 
 - [ ] WCAG Guidelines
 - [ ] Re-Design top searches page
-- [ ] Re-design subscription footer
+- [ ] Re-Design subscription footer
 - [ ] Product demonstration
 - [ ] Product presentation
 
