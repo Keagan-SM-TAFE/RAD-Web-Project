@@ -77,14 +77,15 @@ if (mysqli_num_rows($result) > 0) {
 }
 $barColourArray = array("#fff100","#ff8c00","#e81123","#ec008c","#68217a","#00188f","#00bcf2","#00b294","#009e49","#bad80a");
 ?>
-  <div class="chart-bar">
-    <canvas id="myBarChart"></canvas>
+  <div class="chart-bar" aria-label="Top search results">
+    <canvas id="myBarChart" aria-label="Top search results" role="img"><p>Top search results image</p></canvas>
 <?php
   echo '<ul class="bottomLegend">';
-  foreach ($label_all as $key => $value) {
-     echo '<li> <span style="background-color:'.$barColourArray[$key].'"></span> '.$value.'</li>';
-  }
-  echo '</ul>';
+    foreach ($label_all as $key => $value) {
+      echo '<li aria-label="Number '.($key + 1).' '.$value.'"><span style="background-color:'.$barColourArray[$key].'"></span>  '.($key + 1).'    '.$value.'</li>';
+    }
+  echo '</ul>
+  <br><br><br><br>';
 ?>
     </div>
   </div>
@@ -96,7 +97,7 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['','','','','','','','','',''],
+    labels: ['1','2','3','4','5','6','7','8','9','10'],
     datasets: [{
       label: "Rating",
       backgroundColor: <?php echo json_encode($barColourArray);?>,
@@ -118,7 +119,7 @@ var myBarChart = new Chart(ctx, {
     scales: {
       xAxes: [{
         time: {
-          unit: 'month'
+          unit: 'value'
         },
         gridLines: {
           display: false,
