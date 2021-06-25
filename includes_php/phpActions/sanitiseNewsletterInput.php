@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     */
     if (isset($_POST["newsletterEmail"])) {
         if (preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $_POST["newsletterEmail"])) {
-           $verifiedEmail = testUserInput($_POST["newsletterEmail"]); 
+            $verifiedEmail = testUserInput($_POST["newsletterEmail"]); 
         }
     }
     /*
@@ -55,6 +55,5 @@ function testUserInput($userData)
 if (count($_POST)>0) {
     $verifiedName = mb_htmlentities($_POST['newsletterName']);
     $verifiedEmail = mb_htmlentities($_POST['newsletterEmail']);
-
 }
 ?>

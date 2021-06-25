@@ -100,8 +100,9 @@ imagesetthickness($topTenImageChart, $lineWidth);
 for ($count = 0; $count <= $yAxisMaxValue; $count += $yAxisLabelSpan) {
     $counter = $gridBottom - $count * $gridHeight / $yAxisMaxValue;
     //draw a line
-    imageline
-    ($topTenImageChart, $gridLeft, $counter, $gridRight, $counter, $gridColor);
+    imageline(
+        $topTenImageChart, $gridLeft, $counter, $gridRight, $counter, $gridColor
+    );
     //Give the bounding box of a text using TrueType fonts
     //This function calculates and returns the bounding box in pixels for a 
     //TrueType text. draw right aligned label
@@ -121,10 +122,12 @@ for ($count = 0; $count <= $yAxisMaxValue; $count += $yAxisLabelSpan) {
 /*
 * draw x-axis and y-axis
 */
-imageline
-($topTenImageChart, $gridLeft, $gridTop, $gridLeft, $gridBottom, $axisColor);
-imageline
-($topTenImageChart, $gridLeft, $gridBottom, $gridRight, $gridBottom, $axisColor);
+imageline(
+    $topTenImageChart, $gridLeft, $gridTop, $gridLeft, $gridBottom, $axisColor
+);
+imageline(
+    $topTenImageChart, $gridLeft, $gridBottom, $gridRight, $gridBottom, $axisColor
+);
 /*
 * draw gridData with x-axis labels
 */

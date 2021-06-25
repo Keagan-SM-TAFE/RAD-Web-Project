@@ -67,6 +67,5 @@ if (count($_POST)>0) {
     $verifiedEmail = mb_htmlentities($_POST['contactEmail']);
     $verifiedSubject = mb_htmlentities($_POST['contactSubject']);
     $verifiedMessage = mb_htmlentities($_POST['contactMessage']);
-
 }
 ?>

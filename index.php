@@ -8,8 +8,6 @@
 <!-- END Showcase -->
 <!-- START of Main Website Content -->
 <section class="container-fluid">
-
-
 <?php
 /**
  * Short description for file
@@ -33,7 +31,6 @@ $conn = openConn();
 $title = $genre = $rating = $year = null;
 $titleError = $genreError = $ratingError = $yearError = null;
 $verifiedTitle = $verifiedGenre = $verifiedRating = $verifiedYear = null;
-
 //Default Query Statemet
 $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%' ";
 ?>
