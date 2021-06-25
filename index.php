@@ -40,25 +40,26 @@ $query = "SELECT * FROM movieDatabase_movies where Title like '%$verifiedTitle%'
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title:</label>
-                        <input type="text" class="form-control form-control-lg" id="title"
+                        <input type="text" class="form-control form-control-lg" id="title" aria-label="Enter movie title"
                         placeholder="Enter Title..." tabindex="1" name="title" value="<?php echo $title; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="genre" class="form-label">Genre</label>
-                        <input type="text" class="form-control form-control-lg" id="genre"
+                        <input type="text" class="form-control form-control-lg" id="genre" aria-label="Enter movie genre"
                         placeholder="Enter Genre..." tabindex="2" name="genre" value="<?php echo $genre; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="rating" class="form-label">Rating</label>
-                        <input type="text" class="form-control form-control-lg" id="rating"
+                        <input type="text" class="form-control form-control-lg" id="rating" aria-label="Enter movie rating"
                         placeholder="Enter Rating..." tabindex="3" name="rating" value="<?php echo $rating; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="year" class="form-label">Year</label>
-                        <input type="text" class="form-control form-control-lg" id="year"
+                        <input type="text" class="form-control form-control-lg" id="year" aria-label="Enter movie year"
                         placeholder="Enter Year..." tabindex="4" name="year" value="<?php echo $year; ?>">
                     </div>
-                    <button type="submit" name="submit" class="btn btn-outline-success btn-lg">Search</button>
+                    <button type="submit" name="submit" class="btn btn-outline-success btn-lg"
+                    aria-label="Search for a movie button" tabindex="5">Search</button>
                     <br><br>
                 </form>
             </div>
