@@ -13,11 +13,11 @@
                     </p>
                 </div>
                 <div class="col-auto">
-                    <label class="visually-hidden" for="autoSizingInput" aria-label="Enter your name">Enter your name</label>
+                    <label class="form-label" for="autoSizingInput" aria-label="Enter your name">Name</label>
                     <input type="text" tabindex="1" class="form-control" id="autoSizingInput" placeholder="Enter your name">
                 </div>
                 <div class="col-auto">
-                    <label class="visually-hidden" for="email" aria-label="Enter your email">Enter your email</label>
+                    <label class="form-label" for="email" aria-label="Enter your email">Email</label>
                     <input type="email" tabindex="2" class="form-control" id="email" placeholder="Enter your email">
                 </div>
                 <div class="col-md">
