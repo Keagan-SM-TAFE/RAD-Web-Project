@@ -63,15 +63,15 @@
                 <div class="card shadow mb-4">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table aria-label="Subscribers table" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Is Subscribed</th>
-                                        <th>Newsletter</th>
-                                        <th>Newsflash</th>
-                                        <th>Date Subscribed</th>
+                                        <th aria-label="Name">Name</th>
+                                        <th aria-label="Email">Email</th>
+                                        <th aria-label="Is Subscribed">Is Subscribed</th>
+                                        <th aria-label="Newsletter">Newsletter</th>
+                                        <th aria-label="Newsflash">Newsflash</th>
+                                        <th aria-label="Date Subscribed">Date Subscribed</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -88,15 +88,24 @@
                                                 <td><?php echo $obj->email;?></td>
                                                 <td>
                                                     <?php $check = ''; if($obj->is_subscribed == 1){ $check = 'checked'; } ?>
-                                                    <input type="checkbox" name="all_newsletter" id="all_newsletter" onclick="update_newsletter(this,<?php echo $obj->id;?>,'all');" <?php echo $check; ?> >
+                                                    <input type="checkbox" name="all_newsletter" aria-label="Is subscribed check box" id="all_newsletter" onclick="update_newsletter(this,<?php echo $obj->id;?>,'all');" <?php echo $check; ?> >
+                                                    <label class="form-check-label" for="all_newsletter">
+                                                    Is subscribed
+                                                    </label>
                                                 </td>
                                                 <td>
                                                     <?php $check = ''; if($obj->newsletter == 1){ $check = 'checked'; } ?>
-                                                    <input type="checkbox" name="newsletter" id="newsletter" onclick="update_newsletter(this,<?php echo $obj->id;?>,'newsletter');" <?php echo $check; ?> >
+                                                    <input type="checkbox" name="newsletter" aria-label="Newsletter checkbox" id="newsletter" onclick="update_newsletter(this,<?php echo $obj->id;?>,'newsletter');" <?php echo $check; ?> >
+                                                    <label class="form-check-label" for="newsletter">
+                                                    News letter
+                                                    </label>
                                                 </td>
                                                 <td>
                                                     <?php $check = ''; if($obj->newsflash == 1){ $check = 'checked'; } ?>
-                                                    <input type="checkbox" name="newsflash" id="newsflash" onclick="update_newsletter(this,<?php echo $obj->id;?>,'newsflash');" <?php echo $check; ?> >
+                                                    <input type="checkbox" name="newsflash" aria-label="Newsflash check box" id="newsflash" onclick="update_newsletter(this,<?php echo $obj->id;?>,'newsflash');" <?php echo $check; ?> >
+                                                    <label class="form-check-label" for="newsflash">
+                                                    News flash
+                                                    </label>
                                                 </td>
                                                 <td><?php echo $obj->dateCreated;?></td>
                                             </tr>
