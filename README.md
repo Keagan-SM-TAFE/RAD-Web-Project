@@ -21,9 +21,9 @@ Using BootStrap to implement a responsive design to the website.
 
 ## Final To-Do List
 
-- [ ] WCAG Guidelines
-- [ ] Re-Design top searches page
-- [ ] Re-Design subscription footer
+- [X] WCAG Guidelines
+- [X] Re-Design top searches page
+- [X] Re-Design subscription footer
 - [ ] Product demonstration
 - [ ] Product presentation
 
