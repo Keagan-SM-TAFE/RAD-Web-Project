@@ -57,14 +57,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     <div class="mb-3">
                         <label for="username" class="form-label">Username:</label>
                         <input type="text" class="form-control form-control-lg" id="username" 
-                            placeholder="Enter Username"  name="username" value="">
+                        aria-label="Enter admin username" placeholder="Enter Admin Username"  name="username" value="">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password:</label>
                         <input type="password" class="form-control form-control-lg" id="genre" 
-                            placeholder="Enter Password"  name="password" value="">
+                        aria-label="Enter admin password" placeholder="Enter Admin Password"  name="password" value="">
                     </div>
-                    <button type="submit" class="btn btn-outline-success btn-lg">Login</button>
+                    <button type="submit" aria-label="Admin login button" class="btn btn-outline-success btn-lg">Login</button>
                     <br><br>
         </form> 
         <?php echo $ERROR; ?> 
