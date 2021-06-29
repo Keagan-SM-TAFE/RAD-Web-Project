@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.7.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 02:14 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.1.32
+-- Host: localhost
+-- Generation Time: Jun 29, 2021 at 11:26 AM
+-- Server version: 5.6.34
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `moviedatabase`
 --
+CREATE DATABASE IF NOT EXISTS `moviedatabase` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `moviedatabase`;
 
 -- --------------------------------------------------------
 
@@ -28,6 +30,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `moviedatabase_admin`
 --
 
+DROP TABLE IF EXISTS `moviedatabase_admin`;
 CREATE TABLE `moviedatabase_admin` (
   `ID` int(11) NOT NULL,
   `Email` varchar(82) DEFAULT NULL,
@@ -40,7 +43,7 @@ CREATE TABLE `moviedatabase_admin` (
 --
 
 INSERT INTO `moviedatabase_admin` (`ID`, `Email`, `Username`, `Password1`) VALUES
-(3, 'admin@gmail.com', 'admin', 'adminadmin');
+(1, 'admin@adminemail.com', 'admin', 'adminadmin');
 
 -- --------------------------------------------------------
 
@@ -48,6 +51,7 @@ INSERT INTO `moviedatabase_admin` (`ID`, `Email`, `Username`, `Password1`) VALUE
 -- Table structure for table `moviedatabase_movies`
 --
 
+DROP TABLE IF EXISTS `moviedatabase_movies`;
 CREATE TABLE `moviedatabase_movies` (
   `ID` int(4) DEFAULT NULL,
   `Title` varchar(82) DEFAULT NULL,
@@ -1051,7 +1055,7 @@ INSERT INTO `moviedatabase_movies` (`ID`, `Title`, `Studio`, `Status`, `Sound`, 
 (979, 'Scarface: Collector\'s Edition', 'Universal', 'Discontinued', 'SUR', 'LBX', '34.98', 'R', 1983, 'Action/Adventure', '2.35:1', 1),
 (980, 'Scent of a Woman', 'Universal', 'Out', 'SUR', 'LBX, 16:9', '26.98', 'R', 1992, 'Drama', '1.85:1', 1),
 (981, 'School Ties', 'Paramount', 'Out', '5.1', 'LBX, 16:9', '29.99', 'PG-13', 1992, 'Drama', '1.85:1', 1),
-(982, 'Scooby Doo\'s Original Mysteries', 'Warner Brothers', 'Out', '1.0', '4:3', '24.98', 'NR', 1969, 'Animation', '1.33:1', 3),
+(982, 'Scooby Doo\'s Original Mysteries', 'Warner Brothers', 'Out', '1.0', '4:3', '24.98', 'NR', 1969, 'Animation', '1.33:1', 4),
 (983, 'Scorpio', 'MGM/UA', 'Out', '2.0', 'LBX', '24.98', 'PG', 1972, 'Mystery/Suspense', '1.85:1', 1),
 (984, 'Scrooged', 'Paramount', 'Out', '5.1', 'LBX, 16:9', '29.99', 'PG-13', 1988, 'Comedy', '1.85:1', 1),
 (985, 'Sea of Love', 'Universal', 'Out', 'SUR', '4:3', '26.98', 'R', 1989, 'Mystery/Suspense', '1.33:1', 1),
@@ -1445,7 +1449,7 @@ INSERT INTO `moviedatabase_movies` (`ID`, `Title`, `Studio`, `Status`, `Sound`, 
 (1372, '7 Faces Of Dr. Lao', 'Warner Brothers', 'Out', '2.0', '4:3, LBX', '24.98', 'NR', 1964, 'SciFi', '1.85:1', 1),
 (1373, 'Bad Moon', 'Warner Brothers', 'Out', '5.1', 'LBX', '19.98', 'R', 1996, 'Horror', '1.85:1', 1),
 (1374, 'Batman Beyond: Return Of The Joker', 'Warner Brothers', 'Out', '2.0', '4:3', '24.98', 'NR', 2000, 'Animation', '1.33:1', 1),
-(1375, 'Scooby Doo And The Alien Invaders', 'Warner Brothers', 'Out', '2.0', '4:3', '24.98', 'NR', 2000, 'Animation', '1.33:1', 3),
+(1375, 'Scooby Doo And The Alien Invaders', 'Warner Brothers', 'Out', '2.0', '4:3', '24.98', 'NR', 2000, 'Animation', '1.33:1', 4),
 (1376, 'Tom Thumb (Special Edition)', 'Warner Brothers', 'Out', '1.0', '4:3, LBX', '24.98', 'G', 1958, 'Family', '1.66:1', 1),
 (1377, 'Playboy: Sexy Girls Next Door', 'Universal', 'Out', '2.0', '4:3', '24.98', 'NR', 2000, 'Late Night', '1.33:1', 1),
 (1378, 'Adventures of the Wilderness Family', 'Universal', 'Postponed', '1.0', '4:3', '19.98', 'G', 1975, 'Family', '1.33:1', 1),
@@ -1904,8 +1908,8 @@ INSERT INTO `moviedatabase_movies` (`ID`, `Title`, `Studio`, `Status`, `Sound`, 
 (1830, 'Jesus Christ Superstar (2000)', 'Universal', 'Out', 'SUR', '4:3', '29.98', 'G', 2000, 'Musical', '1.33:1', 1),
 (1831, 'Little Vampire', 'New Line', 'Out', '5.1', '4:3 P&S, LBX', '24.98', 'PG', 2000, 'Family', '1.85:1', 1),
 (1832, 'Old Man And The Sea', 'Warner Brothers', 'Out', '1.0', '4:3 P&S, LBX, 16:9', '19.98', 'NR', 1958, 'Drama', '1.85:1', 1),
-(1833, 'Scooby Doo And The Witch\'s Ghost', 'Warner Brothers', 'Out', '1.0', '4:3', '19.98', 'NR', 1999, 'Animation', '1.33:1', 3),
-(1834, 'Scooby Doo On Zombie Island', 'Warner Brothers', 'Out', '1.0', '4:3', '19.98', 'NR', 1998, 'Animation', '1.33:1', 11),
+(1833, 'Scooby Doo And The Witch\'s Ghost', 'Warner Brothers', 'Out', '1.0', '4:3', '19.98', 'NR', 1999, 'Animation', '1.33:1', 4),
+(1834, 'Scooby Doo On Zombie Island', 'Warner Brothers', 'Out', '1.0', '4:3', '19.98', 'NR', 1998, 'Animation', '1.33:1', 16),
 (1835, 'Adjuster', 'MGM/UA', 'Out', '2.0', 'LBX, 16:9', '19.98', 'R', 1992, 'Drama', '1.85:1', 1),
 (1836, 'Boxing Helena', 'MGM/UA', 'Out', '2.0', 'LBX, 16:9', '19.98', 'UR', 1993, 'Drama', '1.85:1', 1),
 (1837, 'Fellini Satyricon', 'MGM/UA', 'Out', '1.0', 'LBX, 16:9', '19.98', 'R', 1968, 'Drama', '2.35:1', 1),
@@ -2056,7 +2060,7 @@ INSERT INTO `moviedatabase_movies` (`ID`, `Title`, `Studio`, `Status`, `Sound`, 
 (1982, 'Meet Joe Black: The Ultimate Edition (Special Edition)', 'Universal', 'Out', '5.1/DTS', 'LBX, 16:9', '29.98', 'PG-13', 1998, 'Drama', '1.85:1', 1),
 (1983, 'Notting Hill: The Ultimate Edition (Special Edition)', 'Universal', 'Out', '5.1/DTS', 'LBX, 16:9', '29.98', 'PG-13', 1999, 'Comedy', '2.35:1', 1),
 (1984, 'Patch Adams: The Ultimate Edition (Special Edition)', 'Universal', 'Out', '5.0/DTS 5.0', 'LBX, 16:9', '29.98', 'PG-13', 1998, 'Comedy', '2.35:1', 1),
-(1985, 'Scooby Doo\'s Spookiest Tales', 'Warner Brothers', 'Out', '1.0', '4:3', '19.98', 'NR', 1979, 'Animation', '1.33:1', 3),
+(1985, 'Scooby Doo\'s Spookiest Tales', 'Warner Brothers', 'Out', '1.0', '4:3', '19.98', 'NR', 1979, 'Animation', '1.33:1', 4),
 (1986, 'Playboy American Beauties: Sexy Girls Next Door', 'Universal', 'Discontinued', '2.0', '4:3', '24.98', 'UR', 2001, 'Late Night', '1.33:1', 1),
 (1987, 'T-Rex: Back To The Cretaceous: IMAX', 'Warner Brothers', 'Out', '5.1', '4:3', '19.98', 'NR', 1998, 'Special Interest', '1.33:1', 1),
 (1988, 'Hatari!', 'Paramount', 'Out', '1.0', 'LBX, 16:9', '29.99', 'NR', 1962, 'Action/Adventure', '1.85:1', 1),
@@ -2275,7 +2279,7 @@ INSERT INTO `moviedatabase_movies` (`ID`, `Title`, `Studio`, `Status`, `Sound`, 
 (2200, 'Mission To Mir: IMAX', 'Warner Brothers', 'Pending', '2.0', '4:3', '19.98', 'NR', 1997, 'Special Interest', '1.33:1', 1),
 (2201, 'Not Without My Daughter', 'MGM/UA', 'Pending', '2.0', 'LBX, 16:9', '14.95', 'PG-13', 1990, 'Drama', '1.85:1', 1),
 (2202, 'Running Scared', 'MGM/UA', 'Pending', '2.0', 'LBX, 16:9', '14.95', 'R', 1986, 'Comedy', '2.35:1', 1),
-(2203, 'Scooby Doo And The Cyber Chase', 'Warner Brothers', 'Pending', '2.0', '4:3', '24.98', 'NR', 2001, 'Animation', '1.33:1', 3),
+(2203, 'Scooby Doo And The Cyber Chase', 'Warner Brothers', 'Pending', '2.0', '4:3', '24.98', 'NR', 2001, 'Animation', '1.33:1', 4),
 (2204, 'She Devil', 'MGM/UA', 'Pending', '2.0', 'LBX, 16:9', '14.95', 'PG-13', 1989, 'Comedy', '1.85:1', 1),
 (2205, 'Shiloh', 'Warner Brothers', 'Pending', '2.0', '4:3', '19.98', 'PG', 1996, 'Family', '1.33:1', 1),
 (2206, 'Shiloh 2: Shiloh Season', 'Warner Brothers', 'Pending', '2.0', '4:3', '19.98', 'PG', 1999, 'Family', '1.33:1', 1),
@@ -2378,11 +2382,12 @@ INSERT INTO `moviedatabase_movies` (`ID`, `Title`, `Studio`, `Status`, `Sound`, 
 -- Table structure for table `moviedatabase_ratings`
 --
 
+DROP TABLE IF EXISTS `moviedatabase_ratings`;
 CREATE TABLE `moviedatabase_ratings` (
   `id` int(11) NOT NULL,
   `movie_id` int(11) NOT NULL,
   `rating` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL DEFAULT current_timestamp()
+  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2406,7 +2411,11 @@ INSERT INTO `moviedatabase_ratings` (`id`, `movie_id`, `rating`, `createdAt`) VA
 (14, 788, 5, '2021-06-15 16:59:29'),
 (15, 1833, 5, '2021-06-15 16:59:40'),
 (16, 2203, 2, '2021-06-15 16:59:41'),
-(17, 1375, 4, '2021-06-15 16:59:43');
+(17, 1375, 4, '2021-06-15 16:59:43'),
+(18, 1834, 1, '2021-06-16 13:48:34'),
+(19, 1834, 5, '2021-06-16 13:48:48'),
+(20, 1834, 5, '2021-06-16 15:55:42'),
+(21, 1833, 4, '2021-06-18 13:43:56');
 
 -- --------------------------------------------------------
 
@@ -2414,14 +2423,15 @@ INSERT INTO `moviedatabase_ratings` (`id`, `movie_id`, `rating`, `createdAt`) VA
 -- Table structure for table `moviedatabase_subscribers`
 --
 
+DROP TABLE IF EXISTS `moviedatabase_subscribers`;
 CREATE TABLE `moviedatabase_subscribers` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `dateCreated` datetime NOT NULL DEFAULT current_timestamp(),
-  `is_subscribed` int(2) NOT NULL DEFAULT 0,
-  `newsletter` int(2) NOT NULL DEFAULT 0,
-  `newsflash` int(2) NOT NULL DEFAULT 0
+  `dateCreated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_subscribed` int(2) NOT NULL DEFAULT '0',
+  `newsletter` int(2) NOT NULL DEFAULT '0',
+  `newsflash` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -2429,13 +2439,29 @@ CREATE TABLE `moviedatabase_subscribers` (
 --
 
 INSERT INTO `moviedatabase_subscribers` (`id`, `name`, `email`, `dateCreated`, `is_subscribed`, `newsletter`, `newsflash`) VALUES
-(1, 'John', 'JohnF@gmail.com', '2021-06-14 09:32:53', 1, 1, 1),
-(2, 'Andrew', 'Andrew@hotmail.com', '2021-06-14 09:33:18', 1, 1, 1),
-(3, 'Sam', 'SamBus@yahoo.com', '2021-06-14 09:33:38', 1, 1, 1),
-(4, 'Frank', 'Frank@gmail.com', '2021-06-15 08:10:31', 1, 1, 1),
-(5, 'Tom', 'Tom@yahoo.com', '2021-06-15 08:13:55', 1, 1, 1),
-(6, 'Timothy', 'Tim@gmail.com', '2021-06-15 08:14:17', 1, 1, 1),
-(7, 'Sarah', 'Harper@gmail.com', '2021-06-15 13:35:56', 0, 1, 0);
+(1, 'Bailey Melrose', 'Bailey.Melrose@gmail.com', '2021-06-14 09:32:53', 0, 0, 0),
+(2, 'Toby Fong', 'Toby.Fong@gmail.com', '2021-06-14 09:33:18', 0, 0, 1),
+(3, 'Ashton Bibb', 'Ashton.Bibb@yahoo.com', '2021-06-14 09:33:38', 0, 1, 0),
+(4, 'Jordan Butt', 'Jordan.Butt@hotmail.com', '2021-06-15 08:10:31', 1, 1, 1),
+(5, 'Charles Dutton', 'Charles.Dutton@hotmail.com', '2021-06-15 06:13:55', 1, 1, 1),
+(6, 'Brayden Nott', 'Brayden.Nott@gmail.com', '2021-06-16 08:14:17', 0, 0, 0),
+(7, 'Hugo Slattery', 'Hugo.Slattery@yahoo.com', '2021-06-17 13:35:56', 0, 1, 0),
+(8, 'George Cracknell', 'George.Cracknell@gmail.com', '2021-06-17 06:35:26', 0, 0, 0),
+(9, 'Oscar Dellit', 'Oscar.Dellit@gmail.com', '2021-06-17 21:50:32', 0, 1, 0),
+(10, 'Lincoln Maiden', 'Lincoln.Maiden@gmail.com', '2021-06-17 05:12:32', 1, 1, 1),
+(11, 'Lucas Tardent', 'Lucas.Tardent@yahoo.com', '2021-06-18 07:44:59', 1, 1, 1),
+(12, 'James White', 'James.White@gmail.com', '2021-06-18 07:31:56', 1, 1, 1),
+(13, 'Charlie Allport', 'Charlie.Allport@hotmail.com', '2021-06-18 09:38:19', 0, 0, 1),
+(14, 'Taj Le Gallienne', 'Taj.Le.Gallienne@icloud.com', '2021-06-19 01:11:16', 0, 1, 0),
+(15, 'Tristan Hammer', 'Tristan.Hammer@hotmail.com', '2021-06-19 07:45:55', 0, 0, 0),
+(16, 'Connor St Clair', 'Connor.St.Clair@icloud.com', '2021-06-19 08:13:29', 0, 1, 0),
+(17, 'Jack Simson', 'Jack.Simson@icloud.com', '2021-06-20 13:38:44', 0, 0, 1),
+(18, 'Spencer Patteson', 'Spencer.Patteson@yahoo.com', '2021-06-20 07:02:05', 0, 0, 1),
+(19, 'Lincoln Verran', 'Lincoln.Verran@gmail.com', '2021-06-20 13:09:35', 0, 0, 0),
+(20, 'Hamish Doyle', 'Hamish.Doyle@hotmail.com', '2021-06-20 08:31:59', 0, 0, 1),
+(21, 'Bailey McClintock', 'Bailey.McClintock@gmail.com', '2021-06-21 01:27:22', 1, 1, 1),
+(22, 'Adam Alden', 'Adam.Alden@hotmail.com', '2021-06-21 02:15:26', 1, 1, 1),
+(23, 'Cooper Tracy', 'Cooper.Tracy@icloud.com', '2021-06-21 08:56:36', 1, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -2467,19 +2493,19 @@ ALTER TABLE `moviedatabase_subscribers`
 -- AUTO_INCREMENT for table `moviedatabase_admin`
 --
 ALTER TABLE `moviedatabase_admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `moviedatabase_ratings`
 --
 ALTER TABLE `moviedatabase_ratings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `moviedatabase_subscribers`
 --
 ALTER TABLE `moviedatabase_subscribers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
