@@ -3,7 +3,7 @@
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
             <img src="..\..\images\heroImage.jpg" class="d-block mx-lg-auto img-fluid" 
-            alt="Movie Search Image" width="700" height="500" loading="lazy">
+            alt="Movie Search Image" width="700" height="500" loading="lazy" aria-label="Movie Search Image">
         </div>
         <div class="col-lg-6">
             <h1 class="display-5 fw-bold lh-1 mb-3">Movie Database Search Project</h1>
