@@ -61,26 +61,26 @@ else:
     <form action="" method="POST" class="form">
         <div class="mb-3">
             <label for="contactName" class="form-label">Your Name</label>
-            <input type="text" class="form-control form-control-lg" id="contactName" 
+            <input type="text" class="form-control form-control-lg" aria-label="Enter your name" id="contactName" 
             name="contactName" placeholder="Enter Name..." tabindex="1" required>
         </div>
         <div class="mb-3">
             <label for="contactEmail" class="form-label">Your Email</label>
-            <input type="email" class="form-control form-control-lg" id="contactEmail" 
+            <input type="email" class="form-control form-control-lg" aria-label="Enter your email" id="contactEmail" 
             name="contactEmail" placeholder="Enter Email..." tabindex="2" required>
         </div>
         <div class="mb-3">
             <label for="contactSubject" class="form-label">Subject</label>
-            <input type="text" class="form-control form-control-lg" id="contactSubject" 
+            <input type="text" class="form-control form-control-lg" aria-label="Enter a subject" id="contactSubject" 
             name="contactSubject" placeholder="Enter Subject..." tabindex="3" required>
         </div>
         <div class="mb-3">
             <label for="contactMessage" class="form-label">Message</label>
-            <textarea class="form-control form-control-lg" rows="5" cols="50" id="contactMessage" 
+            <textarea class="form-control form-control-lg" rows="5" cols="50" aria-label="Enter a message" id="contactMessage" 
             name="contactMessage" placeholder="Enter Message..." tabindex="4"></textarea>
         </div>
         <div>
-            <button type="submit" class="btn btn-outline-success btn-lg">Send Message!</button>
+            <button type="submit" class="btn btn-outline-success btn-lg" aria-label="Send contact message button">Send Message!</button>
         </div>
     </form>
 </div>
